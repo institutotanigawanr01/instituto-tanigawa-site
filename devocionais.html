@@ -2,759 +2,741 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Devocionais Diários | Instituto Tanigawa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Projeto Devocionais Diários do Instituto Tanigawa – mensagens matinais com profundidade bíblica, pastoral e profética, enviadas por WhatsApp e Instagram." />
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Sora:wght@300;400;500;700&display=swap" rel="stylesheet" />
-
+  <title>Devocionais – Instituto Tanigawa</title>
+  <meta name="description" content="Devocionais diários do Instituto Tanigawa: palavras profundas, bíblicas e práticas para alinhamento diário de vida e espírito.">
   <style>
-    :root {
-      --bg: #f5f7fa;
-      --bg-alt: #ffffff;
-      --bg-soft: #e3edf5;
-      --text: #102033;
-      --text-soft: #4d6179;
-      --accent: #0f6299;
-      --accent-soft: #1ba5b8;
-      --accent-soft-2: #88c8b8;
-      --border-soft: #d4dde8;
-      --shadow-soft: 0 18px 40px rgba(4, 25, 53, 0.12);
-      --radius-lg: 24px;
-      --radius-md: 16px;
-      --radius-pill: 999px;
-      --transition-fast: 0.18s ease-out;
-      --transition-med: 0.25s ease;
-    }
-    [data-theme="dark"] {
-      --bg: #050713;
-      --bg-alt: #0c1321;
-      --bg-soft: #121b2c;
-      --text: #f7fbff;
-      --text-soft: #c2cde0;
-      --accent: #47b5ff;
-      --accent-soft: #37d4c6;
-      --accent-soft-2: #96f2c6;
-      --border-soft: #28344a;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.7);
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg-main: #020617;
+      --bg-alt: #030712;
+      --accent: #3b82f6;
+      --accent-soft: #1d4ed8;
+      --accent-light: #93c5fd;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-soft: #1f2937;
+      --radius-lg: 18px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.65);
+      --max-width: 1120px;
+    }
 
     body {
-      font-family: "Sora", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(28, 81, 142, 0.12), transparent 55%),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      scroll-behavior: smooth;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 60%, #000 100%);
+      color: var(--text-main);
+      min-height: 100vh;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    .shell { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
 
     header {
       position: sticky;
       top: 0;
       z-index: 50;
-      backdrop-filter: blur(16px);
-      background: linear-gradient(
-        to bottom,
-        rgba(245, 247, 250, 0.95),
-        rgba(245, 247, 250, 0.7)
-      );
-      border-bottom: 1px solid rgba(212, 221, 232, 0.6);
-    }
-    [data-theme="dark"] header {
-      background: linear-gradient(
-        to bottom,
-        rgba(5, 7, 19, 0.97),
-        rgba(5, 7, 19, 0.8)
-      );
-      border-bottom-color: rgba(40, 52, 74, 0.7);
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.85), transparent);
+      border-bottom: 1px solid rgba(55, 65, 81, 0.65);
     }
 
-    .header-inner {
+    .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      padding: 14px 0;
+      padding: 0.9rem 0;
+      gap: 1rem;
     }
 
-    .brand {
+    .nav-left {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 0.75rem;
     }
 
     .brand-mark {
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      background: radial-gradient(circle at 20% 15%, #ffffff 0, #cfe7ff 30%, #0f6299 100%);
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #bfdbfe, #3b82f6 35%, #020617 100%);
+      box-shadow: 0 0 24px rgba(59, 130, 246, 0.9);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 25px rgba(12, 70, 128, 0.4);
-      font-weight: 700;
-      font-size: 18px;
-      color: #0a2540;
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .brand-mark span {
+      display: inline-block;
+      transform: translateY(0.5px);
     }
 
     .brand-text {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      line-height: 1.1;
     }
 
-    .brand-text span:first-child {
-      font-family: "Playfair Display", serif;
-      font-size: 18px;
-      letter-spacing: 0.06em;
+    .brand-text strong {
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .brand-text span:last-child {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-soft);
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .brand-text span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 14px;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
+      gap: 1rem;
+      font-size: 0.9rem;
     }
 
     .nav-links a {
-      padding: 6px 8px;
-      border-radius: 999px;
-      color: var(--text-soft);
-      transition:
-        background var(--transition-fast),
-        color var(--transition-fast),
-        transform var(--transition-fast);
+      position: relative;
+      color: var(--text-muted);
+      padding-bottom: 2px;
     }
 
     .nav-links a:hover {
-      background: rgba(15, 98, 153, 0.08);
-      color: var(--accent);
-      transform: translateY(-1px);
+      color: var(--text-main);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     .nav-cta {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 0.5rem;
     }
 
     .btn {
-      border: none;
-      outline: none;
-      border-radius: var(--radius-pill);
-      padding: 9px 18px;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      transition:
-        background var(--transition-med),
-        color var(--transition-med),
-        box-shadow var(--transition-med),
-        transform var(--transition-fast);
+      justify-content: center;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid transparent;
+      padding: 0.45rem 0.9rem;
       white-space: nowrap;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background-color 0.12s, border-color 0.12s, color 0.12s;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, var(--accent), var(--accent-soft));
-      color: #ffffff;
-      box-shadow: 0 12px 30px rgba(15, 98, 153, 0.4);
+      color: #020617;
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.7);
+      border-color: rgba(191, 219, 254, 0.5);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(15, 98, 153, 0.6);
+      box-shadow: 0 16px 40px rgba(37, 99, 235, 0.9);
     }
 
     .btn-ghost {
-      background: transparent;
-      color: var(--text-soft);
-      border: 1px solid var(--border-soft);
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--text-muted);
+      border-color: rgba(75, 85, 99, 0.9);
     }
 
     .btn-ghost:hover {
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--accent);
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text-main);
+      transform: translateY(-1px);
     }
 
-    .theme-toggle {
+    .mobile-menu-btn {
+      display: none;
       border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 12px;
-      background: rgba(12, 19, 37, 0.04);
-      color: var(--text-soft);
+      border: 1px solid rgba(75, 85, 99, 0.85);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.35rem 0.7rem;
+      font-size: 0.8rem;
+      color: var(--text-main);
     }
 
-    main { padding-bottom: 80px; }
-    section { padding: 60px 0; }
-
-    .eyebrow {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--accent-soft);
-      margin-bottom: 10px;
+    main {
+      flex: 1;
     }
 
-    .page-hero-inner {
-      padding-top: 40px;
+    /* HERO */
+    .hero {
+      padding: 3.2rem 0 2.4rem;
+    }
+
+    .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 34px;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.3rem;
       align-items: center;
     }
 
-    .page-title {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(30px, 4vw, 38px);
-      line-height: 1.15;
-      margin-bottom: 14px;
-    }
-
-    .page-subtitle {
-      font-size: 15px;
-      color: var(--text-soft);
-      max-width: 560px;
-    }
-
-    .tag-pill {
-      border-radius: 999px;
-      padding: 6px 12px;
-      background: rgba(255, 255, 255, 0.7);
-      border: 1px solid var(--border-soft);
+    .pill {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      color: var(--text-soft);
+      gap: 0.45rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
     }
 
-    [data-theme="dark"] .tag-pill {
-      background: rgba(10, 15, 26, 0.9);
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.85);
     }
 
-    .hero-tags {
+    .hero-title {
+      font-size: 2.3rem;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(120deg, #93c5fd, #e0f2fe, #93c5fd);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 32rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-cta-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
+      gap: 0.6rem;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-note strong {
+      color: var(--accent-light);
     }
 
     .hero-card {
-      position: relative;
-      background:
-        radial-gradient(circle at 10% 0, rgba(255, 255, 255, 0.12), transparent 60%),
-        var(--bg-alt);
-      border-radius: 24px;
+      background: radial-gradient(circle at top left, #1d4ed8 0, #020617 40%, #020617 100%);
+      border-radius: 26px;
+      padding: 1.4rem 1.3rem 1.5rem;
       box-shadow: var(--shadow-soft);
-      padding: 22px;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      opacity: 0.25;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(71, 181, 255, 0.25), transparent 60%),
-        radial-gradient(circle at 70% 80%, rgba(55, 212, 198, 0.3), transparent 60%);
-      pointer-events: none;
-    }
-
-    .hero-card-inner {
+      border: 1px solid rgba(148, 163, 184, 0.45);
       position: relative;
-      z-index: 1;
+      overflow: hidden;
+      font-size: 0.86rem;
+      color: #e5e7eb;
     }
 
-    .hero-card-inner h3 {
-      font-size: 18px;
-      margin-bottom: 6px;
+    .hero-card-title {
+      font-size: 1.02rem;
+      margin-bottom: 0.5rem;
     }
 
-    .hero-card-inner p {
-      font-size: 13px;
-      color: var(--text-soft);
+    .hero-card small {
+      display: block;
+      margin-top: 0.6rem;
+      font-size: 0.75rem;
+      opacity: 0.9;
     }
 
-    .section-heading {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 26px;
+    /* SEÇÕES */
+    section {
+      padding: 2.2rem 0;
     }
 
-    .section-heading h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 24px;
+    .section-header {
+      margin-bottom: 1.5rem;
     }
 
-    .section-heading p {
-      font-size: 14px;
-      color: var(--text-soft);
-      max-width: 600px;
+    .section-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-light);
+      margin-bottom: 0.4rem;
     }
 
-    .grid-2 {
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+    }
+
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .devo-card {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      padding: 1rem;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.8);
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .devo-label {
+      font-size: 0.75rem;
+      color: var(--accent-light);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.25rem;
+    }
+
+    .devo-title {
+      font-size: 0.96rem;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+
+    .devo-ref {
+      font-size: 0.8rem;
+      color: var(--accent-light);
+      margin-bottom: 0.35rem;
+    }
+
+    .devo-snippet {
+      margin-bottom: 0.4rem;
+    }
+
+    .devo-footer {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* COMO FUNCIONA */
+    .two-col {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 28px;
+      gap: 1.8rem;
+      font-size: 0.86rem;
+      color: var(--text-muted);
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
     }
 
-    .card {
-      background: var(--bg-alt);
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-soft);
-      box-shadow: 0 10px 26px rgba(8, 21, 40, 0.08);
-      padding: 18px 18px 16px;
-      position: relative;
-      overflow: hidden;
+    .stack strong {
+      color: var(--text-main);
     }
 
-    .card h3 {
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-
-    .card p {
-      font-size: 14px;
-      color: var(--text-soft);
-    }
-
-    .list {
-      font-size: 13px;
-      color: var(--text-soft);
-      margin-top: 8px;
-    }
-
-    .list li + li {
-      margin-top: 4px;
-    }
-
-    .pill-row {
+    .chip-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 8px;
-      font-size: 11px;
+      gap: 0.45rem;
+      margin-top: 0.4rem;
     }
 
-    .pill-soft {
-      padding: 4px 10px;
+    .chip {
       border-radius: 999px;
-      background: rgba(15, 98, 153, 0.08);
-      color: var(--accent);
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      padding: 0.25rem 0.6rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
     }
 
-    .devocional-list {
+    /* CTA FINAL */
+    .cta-final {
+      background: linear-gradient(135deg, #1d4ed8, #0b1120);
+      border-radius: 22px;
+      padding: 1.4rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(191, 219, 254, 0.6);
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
-    }
-
-    .devocional-item {
-      background: var(--bg-alt);
-      border-radius: 16px;
-      border: 1px solid var(--border-soft);
-      padding: 14px 14px 12px;
-      font-size: 13px;
-      box-shadow: 0 8px 20px rgba(8, 21, 40, 0.06);
-    }
-
-    .devocional-item strong {
-      display: block;
-      margin-bottom: 2px;
-    }
-
-    .devocional-item span {
-      display: block;
-      font-size: 11px;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
-
-    .cta-panel {
-      margin-top: 40px;
-      border-radius: 24px;
-      padding: 22px 20px;
-      background: linear-gradient(
-        135deg,
-        rgba(15, 98, 153, 0.06),
-        rgba(55, 212, 198, 0.04)
-      );
-      border: 1px dashed rgba(27, 165, 184, 0.6);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+      gap: 1.4rem;
       align-items: center;
-      justify-content: space-between;
+      margin-top: 1.8rem;
     }
 
-    .cta-panel p {
-      font-size: 14px;
-      color: var(--text-soft);
-      max-width: 620px;
+    .cta-final p {
+      font-size: 0.9rem;
     }
 
+    .cta-final small {
+      font-size: 0.75rem;
+      opacity: 0.9;
+    }
+
+    .cta-final-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .cta-final-actions .btn-primary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* FOOTER */
     footer {
-      border-top: 1px solid var(--border-soft);
-      padding: 18px 0 28px;
-      font-size: 12px;
-      color: var(--text-soft);
+      border-top: 1px solid rgba(55, 65, 81, 0.7);
+      background: rgba(3, 7, 18, 0.98);
+      margin-top: 2.2rem;
     }
 
     .footer-inner {
+      padding: 1.2rem 0 1.4rem;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 10px;
+      gap: 0.9rem;
       align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-muted);
     }
 
     .footer-links {
       display: flex;
-      gap: 10px;
+      flex-wrap: wrap;
+      gap: 0.7rem;
     }
 
-    .footer-links a {
-      text-decoration: underline;
-      text-decoration-style: dotted;
+    .footer-links a:hover {
+      color: var(--accent-light);
     }
 
+    /* RESPONSIVO */
     @media (max-width: 960px) {
-      .page-hero-inner,
-      .grid-2 {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    @media (max-width: 800px) {
-      .header-inner {
-        flex-wrap: wrap;
-        align-items: flex-start;
-      }
-
-      nav {
-        width: 100%;
-        justify-content: flex-end;
-        flex-wrap: wrap;
-      }
-
       .nav-links {
         display: none;
+      }
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+      .hero-grid,
+      .card-grid-3,
+      .two-col,
+      .cta-final {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero {
+        padding-top: 2.3rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+      .section-title {
+        font-size: 1.28rem;
       }
     }
   </style>
 </head>
-<body data-theme="light">
-  <header>
-    <div class="shell header-inner">
-      <div class="brand">
-        <div class="brand-mark">IT</div>
-        <div class="brand-text">
-          <span>Instituto Tanigawa</span>
-          <span>Vida • Família • Negócios</span>
-        </div>
+<body>
+  <div class="page" id="topo">
+    <header>
+      <div class="wrapper">
+        <nav class="nav">
+          <div class="nav-left">
+            <div class="brand-mark" aria-label="Instituto Tanigawa">
+              <span>IT</span>
+            </div>
+            <div class="brand-text">
+              <strong>Instituto Tanigawa</strong>
+              <span>Vida • Espírito • Propósito</span>
+            </div>
+          </div>
+          <div class="nav-links">
+            <a href="index.html#inicio">Início</a>
+            <a href="mentorias.html">Mentorias</a>
+            <a href="index.html#nr1">Projeto NR-1</a>
+            <a href="#inicio">Devocionais</a>
+            <a href="index.html#sobre">Sobre</a>
+            <a href="index.html#contato">Contato</a>
+          </div>
+          <div class="nav-cta">
+            <button class="mobile-menu-btn" type="button">Menu</button>
+            <a href="#lista" class="btn btn-ghost">Como receber</a>
+            <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              Quero receber os devocionais
+            </a>
+          </div>
+        </nav>
       </div>
-      <nav>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="mentorias.html">Mentorias</a>
-          <a href="nr1.html">Projeto NR-1</a>
-          <a href="devocionais.html">Devocionais</a>
-          <a href="contato.html">Contato</a>
-        </div>
-        <div class="nav-cta">
-          <button class="btn btn-ghost theme-toggle" id="themeToggle">Modo Escuro</button>
-          <a href="#como-receber" class="btn btn-primary">Quero receber</a>
-        </div>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <!-- HERO DEVOCIONAIS -->
-    <section>
-      <div class="shell page-hero-inner">
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="inicio">
+        <div class="wrapper hero-grid">
+          <div>
+            <div class="pill">
+              <span class="pill-dot"></span>
+              <span>Devocionais Instituto Tanigawa</span>
+            </div>
+            <h1 class="hero-title">
+              Devocionais diários para quem precisa
+              <span class="highlight">de direção simples e profunda</span>
+            </h1>
+            <p class="hero-subtitle">
+              Não são frases soltas para repostar. São textos curtos, bíblicos
+              e cirúrgicos, que conversam com a sua realidade e ajudam a alinhar
+              o coração todos os dias.
+            </p>
+
+            <div class="hero-cta-row">
+              <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                Quero entrar na lista de devocionais
+              </a>
+              <a href="#amostras" class="btn btn-ghost">
+                Ver amostras de devocionais
+              </a>
+            </div>
+            <p class="hero-note">
+              Escrito e enviado por <strong>Sergio Tanigawa</strong> – em linguagem simples,
+              profunda e pastoral, como se estivesse falando diretamente com você.
+            </p>
+          </div>
+
+          <aside class="hero-card" aria-label="Sobre os devocionais">
+            <h2 class="hero-card-title">Qual é a proposta desses devocionais?</h2>
+            <p>
+              Ser um ponto de alinhamento diário entre o que você está vivendo
+              na prática e o que Deus já falou na Palavra. Não é mais um peso
+              para a agenda, é um respiro no meio da guerra.
+            </p>
+            <small>
+              Pensado para ser lido em poucos minutos, mas para ecoar durante o dia.
+            </small>
+          </aside>
+        </div>
+      </section>
+
+      <!-- AMOSTRAS -->
+      <section id="amostras">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Amostras</div>
+            <h2 class="section-title">Como são os devocionais na prática?</h2>
+            <p class="section-subtitle">
+              Abaixo não estão devocionais inteiros, mas trechos que mostram o
+              tom: bíblico, direto, amoroso e firme. A ideia é te ajudar a ouvir
+              Deus com clareza, sem floreios.
+            </p>
+          </div>
+
+          <div class="card-grid-3">
+            <article class="devo-card">
+              <div class="devo-label">Tema</div>
+              <h3 class="devo-title">Quando Deus mexe na zona de conforto</h3>
+              <div class="devo-ref">Gênesis 12:1</div>
+              <p class="devo-snippet">
+                “Às vezes, Deus não te tira de um lugar porque Ele é contra o
+                que você construiu, mas porque sabe que, se você ficar, vai
+                confundir estabilidade com estagnação.”
+              </p>
+              <p class="devo-footer">
+                Direção para quem sente que Deus está pedindo movimentos
+                aparentemente ilógicos.
+              </p>
+            </article>
+
+            <article class="devo-card">
+              <div class="devo-label">Tema</div>
+              <h3 class="devo-title">Cansaço que não é só físico</h3>
+              <div class="devo-ref">Isaías 40:29-31</div>
+              <p class="devo-snippet">
+                “Existem cansaços que uma noite de sono não resolve, porque não
+                é o corpo que está pesado, é o espírito carregando coisas que
+                Deus nunca pediu para você segurar.”
+              </p>
+              <p class="devo-footer">
+                Para quem continua funcionando por fora, mas por dentro só
+                queria apertar ‘pausa’.
+              </p>
+            </article>
+
+            <article class="devo-card">
+              <div class="devo-label">Tema</div>
+              <h3 class="devo-title">Quando a resposta de Deus é silêncio</h3>
+              <div class="devo-ref">Salmos 13</div>
+              <p class="devo-snippet">
+                “Às vezes, Deus não está em silêncio porque te abandonou, mas
+                porque já falou o suficiente para essa fase, e agora o próximo
+                passo não é ouvir mais, é obedecer o que já foi dito.”
+              </p>
+              <p class="devo-footer">
+                Para quem está tentado a interpretar o silêncio de Deus como
+                rejeição.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMO FUNCIONA -->
+      <section id="lista">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Como receber</div>
+            <h2 class="section-title">Como funciona a lista de devocionais?</h2>
+            <p class="section-subtitle">
+              A ideia é simples: você entra na lista, e, todos os dias, recebe
+              o devocional em formato direto, próprio para ler e também para
+              encaminhar para quem Deus te mostrar.
+            </p>
+          </div>
+
+          <div class="two-col">
+            <div class="stack">
+              <p><strong>1. Você se inscreve na lista de devocionais</strong></p>
+              <p>
+                Preenche um formulário rápido, informando seus dados básicos e
+                confirmando que deseja receber os devocionais diariamente.
+              </p>
+
+              <p><strong>2. Você passa a receber no canal indicado</strong></p>
+              <p>
+                Os devocionais são enviados em formato enxuto, tanto para leitura
+                pessoal quanto para compartilhamento responsável.
+              </p>
+
+              <div class="chip-row">
+                <span class="chip">Texto direto</span>
+                <span class="chip">Profundo e prático</span>
+                <span class="chip">Linguagem pastoral</span>
+              </div>
+            </div>
+
+            <div class="stack">
+              <p><strong>3. Não é lista de spam, é cuidado contínuo</strong></p>
+              <p>
+                O objetivo não é lotar seu celular de mensagens, e sim criar um
+                ponto fixo de alinhamento diário. Se em algum momento você
+                entender que não é mais tempo, pode sair da lista.
+              </p>
+              <p>
+                Se o coração que recebe está aberto, Deus sempre encontra uma
+                forma de usar uma simples mensagem para realinhar rotas inteiras.
+              </p>
+              <p style="margin-top:0.4rem;">
+                <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" class="card-footer-link" target="_blank" rel="noopener noreferrer">
+                  <span>Quero entrar na lista de devocionais →</span>
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <!-- CTA FINAL -->
+          <div class="cta-final" style="margin-top:1.8rem;">
+            <div>
+              <h3 style="margin-bottom:0.4rem;">Talvez o que te falte não seja mais informação, e sim um lembrete diário do que Deus já falou.</h3>
+              <p>
+                Esses devocionais existem para isso: lembrar, confrontar em amor
+                e incentivar você a não se acostumar com aquilo que Deus já
+                pediu para mudar.
+              </p>
+            </div>
+            <div class="cta-final-actions">
+              <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                Quero receber diariamente
+              </a>
+              <a href="index.html#contato" class="btn btn-ghost">
+                Tenho dúvidas, quero falar com a equipe
+              </a>
+              <small>
+                Você não está apenas se cadastrando em uma lista. Está dizendo:
+                “Eu reconheço que preciso desse alinhamento diário”.
+              </small>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrapper footer-inner">
         <div>
-          <div class="eyebrow">Projeto Devocionais Diários</div>
-          <h1 class="page-title">
-            Uma palavra viva, todo dia, para alinhar seu coração antes de tudo o que virá.
-          </h1>
-          <p class="page-subtitle">
-            Devocionais enviados diariamente, com profundidade bíblica, pastoral e
-            profética, para te ajudar a começar o dia na presença de Deus – com clareza,
-            confrontos em amor e direção prática.
-          </p>
-          <div class="hero-tags">
-            <span class="tag-pill">Versão WhatsApp – 5h00</span>
-            <span class="tag-pill">Versão Instagram – 5h01</span>
-            <span class="tag-pill">Tom pastoral, firme e amoroso</span>
-          </div>
+          <strong>Instituto Tanigawa</strong><br />
+          <span>Cuidado com pessoas, líderes e organizações.</span>
         </div>
-
-        <aside class="hero-card">
-          <div class="hero-card-inner">
-            <h3>Qual é a essência desses devocionais?</h3>
-            <p>
-              Não são frases soltas ou clichês motivacionais. São textos escritos como
-              se Sergio estivesse sentando à sua frente: diretos, profundos, bíblicos,
-              com linguagem de pastor e mentor que conhece dor, processos e transições
-              de ciclo.
-            </p>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- SOBRE O PROJETO -->
-    <section id="sobre">
-      <div class="shell">
-        <div class="section-heading">
-          <h2>Sobre o Projeto Sergio – Devocionais</h2>
-          <p>
-            Este projeto nasce do desejo de derramar, todos os dias, um pouco daquilo
-            que Deus já vem falando no secreto – em forma de conselho, direção, confronto
-            e esperança – para centenas e, em breve, milhares de pessoas.
-          </p>
+        <div class="footer-links">
+          <a href="#topo">Voltar ao topo</a>
+          <a href="mentorias.html">Mentorias</a>
+          <a href="index.html#nr1">Projeto NR-1</a>
+          <a href="#inicio">Devocionais</a>
         </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3>1 devocional, 2 formatos</h3>
-            <p>
-              Todos os dias é gerada uma mesma palavra, em dois formatos:
-            </p>
-            <ul class="list">
-              <li>• <strong>Versão WhatsApp</strong> – mais direta, crua, no ritmo de quem lê no celular.</li>
-              <li>• <strong>Versão Instagram</strong> – adaptada para postagem, com tema, versículo, referência e texto fluindo em uma peça só.</li>
-            </ul>
-            <p class="list">
-              Isso garante coerência entre as plataformas, respeitando a linguagem
-              de cada uma.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Horários & fluxo diário</h3>
-            <ul class="list">
-              <li>• Envio previsto da <strong>versão WhatsApp</strong>: por volta das <strong>5h00</strong>.</li>
-              <li>• Publicação da <strong>versão Instagram</strong>: por volta das <strong>5h01</strong>.</li>
-            </ul>
-            <p class="list">
-              A ideia é simples: antes de mergulhar em notícias, demandas e pressões,
-              você recebe um alinhamento de coração, mente e espírito.
-            </p>
-          </div>
+        <div>
+          <span>CNPJ 00.000.000/0000-00 • © <span id="anoAtual">2025</span> Instituto Tanigawa</span>
         </div>
       </div>
-    </section>
-
-    <!-- COMO FUNCIONA -->
-    <section id="como-funciona">
-      <div class="shell">
-        <div class="section-heading">
-          <h2>Como os devocionais são escritos?</h2>
-          <p>
-            Existe um padrão, mas não uma “forma engessada”. O objetivo é preservar
-            o tom de cuidado e confronto que você conhece, sem perder profundidade
-            nem clareza.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="pill-row">
-              <span class="pill-soft">WhatsApp</span>
-            </div>
-            <h3>Versão WhatsApp</h3>
-            <p>
-              Texto direto, sem cumprimentos, como se fosse um áudio transformado em
-              palavras. Usa negrito e itálico apenas quando necessário, com liberdade
-              de extensão: às vezes 3 linhas, às vezes 10 ou mais – conforme o tema
-              exige.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="pill-row">
-              <span class="pill-soft">Instagram</span>
-            </div>
-            <h3>Versão Instagram</h3>
-            <p>
-              Estrutura fixa:
-            </p>
-            <ul class="list">
-              <li>1. Tema curto e impactante.</li>
-              <li>2. Texto do versículo.</li>
-              <li>3. Referência (livro, capítulo:versículo).</li>
-              <li>4. Explicação direta e profunda.</li>
-              <li>5. Frase de impacto final.</li>
-              <li>6. Assinatura: Sergio Tanigawa – Pastor & Mentor.</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <div class="pill-row">
-              <span class="pill-soft">Coerência & cuidado</span>
-            </div>
-            <h3>Critérios espirituais</h3>
-            <p>
-              Os textos evitam repetições de versículos em dias seguidos, honram a
-              Palavra, não romantizam dor nem banalizam promessa. O foco é alinhar
-              coração, tirar escamas da mente e apontar para decisões práticas de
-              fé e obediência.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMO RECEBER -->
-    <section id="como-receber">
-      <div class="shell">
-        <div class="section-heading">
-          <h2>Como receber os devocionais todos os dias?</h2>
-          <p>
-            Em breve, haverá um fluxo automático de cadastro exclusivo para as listas
-            de transmissão. Enquanto isso, você já pode manifestar seu interesse
-            e garantir que será incluído(a) nas próximas atualizações.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3>1. Lista de transmissão no WhatsApp</h3>
-            <p>
-              Os devocionais matinais são enviados por listas de transmissão. Isso
-              significa que:
-            </p>
-            <ul class="list">
-              <li>• Seu número precisa ter o contato do Instituto salvo.</li>
-              <li>• Você precisa aceitar receber as mensagens diariamente.</li>
-              <li>• É possível sair a qualquer momento, sem pressão.</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>2. Acompanhamento pelo Instagram</h3>
-            <p>
-              A mesma mensagem, em versão adaptada, será postada diariamente no perfil
-              oficial do Instituto. Assim, mesmo quem não está nas listas, poderá
-              acompanhar, salvar, compartilhar e revisitar.
-            </p>
-          </div>
-        </div>
-
-        <div class="cta-panel">
-          <p>
-            Para entrar na lista de interesse e, assim que o fluxo estiver pronto,
-            ser incluído(a) nos envios diários, clique no botão e envie uma mensagem
-            para o Instituto ou use a página de contato para informar: “Quero receber
-            os devocionais diários”.
-          </p>
-          <a href="contato.html" class="btn btn-primary">Quero receber os devocionais</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXEMPLOS / ARQUIVO -->
-    <section id="exemplos">
-      <div class="shell">
-        <div class="section-heading">
-          <h2>Exemplos de temas que costumam aparecer</h2>
-          <p>
-            Abaixo, apenas alguns exemplos ilustrativos de linhas temáticas. A cada
-            dia, o Espírito Santo conduz o foco conforme a estação e o que Ele está
-            falando ao Corpo.
-          </p>
-        </div>
-
-        <div class="devocional-list">
-          <div class="devocional-item">
-            <span>Tema devocional</span>
-            <strong>Quando Deus te chama para sair do lugar seguro</strong>
-            <p>
-              Sobre transições, obediência e abrir mão de estabilidade para viver o
-              que o Céu está pedindo.
-            </p>
-          </div>
-          <div class="devocional-item">
-            <span>Tema devocional</span>
-            <strong>Curando a distorção de quem você é em Deus</strong>
-            <p>
-              Sobre identidade, voz interior, condenação e alinhamento com a Palavra.
-            </p>
-          </div>
-          <div class="devocional-item">
-            <span>Tema devocional</span>
-            <strong>Quando a mente está mais cansada que o corpo</strong>
-            <p>
-              Sobre esgotamento emocional, descanso em Deus e decisões práticas de limite.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="shell footer-inner">
-      <div>© <span id="year"></span> Instituto Tanigawa. Todos os direitos reservados.</div>
-      <div class="footer-links">
-        <a href="index.html#topo">Home</a>
-        <a href="mentorias.html">Mentorias</a>
-        <a href="nr1.html">Projeto NR-1</a>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    var themeToggle = document.getElementById("themeToggle");
-    function setTheme(theme) {
-      document.body.setAttribute("data-theme", theme);
-      themeToggle.textContent =
-        theme === "dark" ? "Modo Claro" : "Modo Escuro";
-    }
-    themeToggle.addEventListener("click", function () {
-      var current = document.body.getAttribute("data-theme") || "light";
-      setTheme(current === "light" ? "dark" : "light");
+    // Atualiza ano no rodapé com segurança
+    const spanAno = document.getElementById('anoAtual');
+    if (spanAno) {
+      spanAno.textContent = new Date().getFullYear();
     }
   </script>
 </body>

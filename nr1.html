@@ -2,660 +2,913 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Projeto NR-1 | Instituto Tanigawa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Projeto NR-1 do Instituto Tanigawa: diagnóstico psicossocial, fluxos NR-1, PGR, GRO e saúde mental corporativa, unindo tecnologia, legislação e cuidado real com pessoas." />
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Sora:wght@300;400;500;700&display=swap" rel="stylesheet" />
-
+  <title>Projeto NR-1 – Instituto Tanigawa</title>
+  <meta name="description" content="Instituto Tanigawa • NR-1: diagnóstico psicossocial, conformidade com NR-1, PGR, GRO e LGPD, com metodologia estruturada para empresas e organizações.">
   <style>
-    :root {
-      --bg: #050713;
-      --bg-alt: #0b1626;
-      --bg-soft: #121f33;
-      --text: #f7fbff;
-      --text-soft: #c2cde0;
-      --accent: #47b5ff;
-      --accent-soft: #37d4c6;
-      --accent-soft-2: #96f2c6;
-      --border-soft: #28344a;
-      --shadow-soft: 0 22px 50px rgba(0, 0, 0, 0.85);
-      --radius-lg: 24px;
-      --radius-md: 16px;
-      --radius-pill: 999px;
-      --transition-fast: 0.18s ease-out;
-      --transition-med: 0.25s ease;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Sora", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 10% 0, rgba(71,181,255,0.24), transparent 55%),
-        radial-gradient(circle at 90% 30%, rgba(55,212,198,0.22), transparent 55%),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
 
-    .shell { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    :root {
+      --bg-main: #020617;
+      --bg-alt: #030712;
+      --accent: #3b82f6;
+      --accent-soft: #1d4ed8;
+      --accent-light: #93c5fd;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-soft: #1f2937;
+      --radius-lg: 18px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.65);
+      --max-width: 1120px;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 60%, #000 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
 
     header {
       position: sticky;
       top: 0;
       z-index: 50;
       backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(5, 7, 19, 0.98), rgba(5, 7, 19, 0.86));
-      border-bottom: 1px solid rgba(40, 52, 74, 0.8);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.85), transparent);
+      border-bottom: 1px solid rgba(55, 65, 81, 0.65);
     }
-    .header-inner {
-      display:flex; align-items:center; justify-content:space-between;
-      gap:20px; padding:14px 0;
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1rem;
     }
-    .brand { display:flex; align-items:center; gap:12px; }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
     .brand-mark {
-      width:40px; height:40px; border-radius:14px;
-      background:radial-gradient(circle at 20% 15%, #ffffff 0, #cfe7ff 30%, #0f6299 100%);
-      display:flex; align-items:center; justify-content:center;
-      box-shadow:0 10px 25px rgba(12,70,128,0.6);
-      font-weight:700; font-size:18px; color:#0a2540;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #bfdbfe, #3b82f6 35%, #020617 100%);
+      box-shadow: 0 0 24px rgba(59, 130, 246, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.05rem;
     }
-    .brand-text { display:flex; flex-direction:column; gap:2px; }
-    .brand-text span:first-child {
-      font-family:"Playfair Display",serif;
-      font-size:18px; letter-spacing:0.06em; text-transform:uppercase;
+
+    .brand-mark span {
+      display: inline-block;
+      transform: translateY(0.5px);
     }
-    .brand-text span:last-child {
-      font-size:11px; text-transform:uppercase;
-      letter-spacing:0.18em; color:var(--text-soft);
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
     }
-    nav { display:flex; align-items:center; gap:10px; }
+
+    .brand-text strong {
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand-text span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
     .nav-links {
-      display:flex; align-items:center; gap:14px;
-      font-size:13px; text-transform:uppercase; letter-spacing:0.16em;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.9rem;
     }
+
     .nav-links a {
-      padding:6px 8px; border-radius:999px;
-      color:var(--text-soft);
-      transition:background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+      position: relative;
+      color: var(--text-muted);
+      padding-bottom: 2px;
     }
+
     .nav-links a:hover {
-      background:rgba(71,181,255,0.12);
-      color:#ffffff;
-      transform:translateY(-1px);
+      color: var(--text-main);
     }
-    .nav-cta { display:flex; align-items:center; gap:8px; }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
     .btn {
-      border:none; outline:none;
-      border-radius:var(--radius-pill); padding:9px 18px;
-      font-size:13px; font-weight:500;
-      letter-spacing:0.08em; text-transform:uppercase;
-      cursor:pointer; display:inline-flex; align-items:center; gap:8px;
-      transition:background var(--transition-med), color var(--transition-med), box-shadow var(--transition-med), transform var(--transition-fast);
-      white-space:nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid transparent;
+      padding: 0.45rem 0.9rem;
+      white-space: nowrap;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background-color 0.12s, border-color 0.12s, color 0.12s;
     }
+
     .btn-primary {
-      background:linear-gradient(135deg,var(--accent),var(--accent-soft));
-      color:#050713; box-shadow:0 14px 36px rgba(0,0,0,0.7);
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+      color: #020617;
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.7);
+      border-color: rgba(191, 219, 254, 0.5);
     }
-    .btn-primary:hover { transform:translateY(-1px); box-shadow:0 20px 50px rgba(0,0,0,0.85); }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(37, 99, 235, 0.9);
+    }
+
     .btn-ghost {
-      background:transparent; color:var(--text-soft);
-      border:1px solid var(--border-soft);
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--text-muted);
+      border-color: rgba(75, 85, 99, 0.9);
     }
-    .btn-ghost:hover { background:rgba(10,19,40,0.9); color:var(--accent); }
 
-    main { padding-bottom:80px; }
-    section { padding:60px 0; }
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
 
-    .eyebrow {
-      font-size:12px; text-transform:uppercase;
-      letter-spacing:0.2em; color:var(--accent-soft-2);
-      margin-bottom:10px;
+    .mobile-menu-btn {
+      display: none;
+      border-radius: 999px;
+      border: 1px solid rgba(75, 85, 99, 0.85);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.35rem 0.7rem;
+      font-size: 0.8rem;
+      color: var(--text-main);
     }
-    .page-hero-inner {
-      padding-top:40px;
-      display:grid;
-      grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);
-      gap:34px;
-      align-items:center;
+
+    main {
+      flex: 1;
     }
-    .page-title {
-      font-family:"Playfair Display",serif;
-      font-size:clamp(30px,4vw,38px);
-      line-height:1.15; margin-bottom:14px;
+
+    /* HERO */
+    .hero {
+      padding: 3.2rem 0 2.6rem;
     }
-    .page-subtitle {
-      font-size:15px; color:var(--text-soft); max-width:560px;
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 2.3rem;
+      align-items: center;
     }
-    .hero-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
-    .tag-pill {
-      border-radius:999px;
-      padding:6px 12px;
-      background:rgba(3,12,28,0.9);
-      border:1px solid rgba(150,242,198,0.5);
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      font-size:11px;
-      color:var(--accent-soft-2);
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.85);
+    }
+
+    .hero-title {
+      font-size: 2.3rem;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(120deg, #93c5fd, #e0f2fe, #93c5fd);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-note strong {
+      color: var(--accent-light);
     }
 
     .hero-card {
-      position:relative;
-      background:radial-gradient(circle at 10% 0, rgba(71,181,255,0.18), transparent 60%), var(--bg-alt);
-      border-radius:24px;
-      box-shadow:var(--shadow-soft);
-      padding:22px;
-      overflow:hidden;
-      border:1px solid rgba(150,242,198,0.2);
-    }
-    .hero-card::before {
-      content:"";
-      position:absolute;
-      inset:-40%;
-      opacity:0.4;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(71,181,255,0.25), transparent 60%),
-        radial-gradient(circle at 70% 80%, rgba(55,212,198,0.3), transparent 60%);
-      pointer-events:none;
-    }
-    .hero-card-inner { position:relative; z-index:1; }
-    .hero-card-inner h3 { font-size:18px; margin-bottom:6px; }
-    .hero-card-inner p { font-size:13px; color:var(--text-soft); }
-
-    .section-heading {
-      display:flex; flex-direction:column; gap:6px;
-      margin-bottom:26px;
-    }
-    .section-heading h2 {
-      font-family:"Playfair Display",serif;
-      font-size:24px;
-    }
-    .section-heading p {
-      font-size:14px; color:var(--text-soft); max-width:600px;
+      background: radial-gradient(circle at top left, #1d4ed8 0, #020617 40%, #020617 100%);
+      border-radius: 26px;
+      padding: 1.4rem 1.3rem 1.6rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      position: relative;
+      overflow: hidden;
+      font-size: 0.86rem;
+      color: #e5e7eb;
     }
 
-    .grid-2 {
-      display:grid;
-      grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
-      gap:28px;
+    .hero-badge {
+      font-size: 0.78rem;
+      color: var(--accent-light);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
-    .grid-3 {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:18px;
+
+    .hero-card-title {
+      font-size: 1.05rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .hero-list {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+
+    .hero-list li {
+      position: relative;
+      padding-left: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #bfdbfe;
+    }
+
+    .hero-card small {
+      display: block;
+      margin-top: 0.7rem;
+      font-size: 0.75rem;
+      opacity: 0.9;
+    }
+
+    /* SEÇÕES GENÉRICAS */
+    section {
+      padding: 2.2rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 36rem;
+    }
+
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
     }
 
     .card {
-      background:var(--bg-alt);
-      border-radius:var(--radius-md);
-      border:1px solid var(--border-soft);
-      box-shadow:0 10px 28px rgba(0,0,0,0.7);
-      padding:20px 22px;
-      position:relative; overflow:hidden;
-    }
-    .card h3 { font-size:18px; margin-bottom:8px; }
-    .card p { font-size:14px; color:var(--text-soft); }
-
-    .pill-row { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; font-size:11px; }
-    .pill-soft {
-      padding:4px 10px; border-radius:999px;
-      background:rgba(4,18,38,0.9);
-      color:var(--accent-soft-2);
-      border:1px solid rgba(71,181,255,0.4);
-    }
-    .list { font-size:13px; color:var(--text-soft); margin-top:8px; }
-    .list li + li { margin-top:4px; }
-
-    .badge {
-      display:inline-block;
-      padding:3px 10px;
-      border-radius:999px;
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:0.14em;
-      color:var(--accent-soft-2);
-      border:1px solid rgba(150,242,198,0.5);
-      margin-bottom:6px;
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      padding: 1rem;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.8);
+      font-size: 0.86rem;
+      color: var(--text-muted);
     }
 
-    .steps {
-      counter-reset: step;
-    }
-    .step-item {
-      position:relative;
-      padding-left:34px;
-      margin-bottom:16px;
-      font-size:14px;
-      color:var(--text-soft);
-    }
-    .step-item::before {
-      counter-increment:step;
-      content: counter(step);
-      position:absolute;
-      left:0; top:2px;
-      width:24px; height:24px;
-      border-radius:999px;
-      background:linear-gradient(135deg,var(--accent),var(--accent-soft));
-      color:#050713;
-      display:flex; align-items:center; justify-content:center;
-      font-size:12px; font-weight:600;
-      box-shadow:0 8px 20px rgba(0,0,0,0.7);
+    .card-tag {
+      font-size: 0.75rem;
+      color: var(--accent-light);
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
     }
 
-    .faq {
-      border-radius:var(--radius-md);
-      border:1px solid var(--border-soft);
-      background:var(--bg-alt);
-      padding:18px 18px 16px;
-      box-shadow:0 10px 26px rgba(0,0,0,0.7);
-    }
-    .faq-item + .faq-item { margin-top:10px; }
-    .faq-question {
-      font-size:14px; font-weight:600;
-      margin-bottom:4px;
-    }
-    .faq-answer {
-      font-size:13px; color:var(--text-soft);
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: var(--text-main);
     }
 
-    .cta-panel {
-      margin-top:40px;
-      border-radius:24px;
-      padding:22px 20px;
-      background:radial-gradient(circle at 10% 0, rgba(71,181,255,0.32), transparent 60%), rgba(5,10,24,0.9);
-      border:1px dashed rgba(150,242,198,0.7);
-      display:flex; flex-wrap:wrap; gap:14px;
-      align-items:center; justify-content:space-between;
+    .card p {
+      margin-bottom: 0.4rem;
     }
-    .cta-panel p { font-size:14px; color:var(--text-soft); max-width:620px; }
 
+    .card ul {
+      margin-top: 0.35rem;
+      padding-left: 1.1rem;
+      list-style: disc;
+    }
+
+    .card ul li {
+      margin-bottom: 0.18rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .stack strong {
+      color: var(--text-main);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.4rem;
+    }
+
+    .chip {
+      border-radius: 999px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      padding: 0.25rem 0.6rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* PASSO A PASSO */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      font-size: 0.84rem;
+    }
+
+    .step-card {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 1rem;
+      color: var(--text-muted);
+    }
+
+    .step-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #020617;
+      font-weight: 700;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-card strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: var(--text-main);
+    }
+
+    /* CTA FINAL */
+    .cta-final {
+      background: linear-gradient(135deg, #1d4ed8, #0b1120);
+      border-radius: 22px;
+      padding: 1.4rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(191, 219, 254, 0.6);
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+      gap: 1.4rem;
+      align-items: center;
+      margin-top: 1.8rem;
+      font-size: 0.9rem;
+    }
+
+    .cta-final small {
+      font-size: 0.75rem;
+      opacity: 0.9;
+    }
+
+    .cta-final-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .cta-final-actions .btn-primary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* FOOTER */
     footer {
-      border-top:1px solid var(--border-soft);
-      padding:18px 0 28px;
-      font-size:12px; color:var(--text-soft);
+      border-top: 1px solid rgba(55, 65, 81, 0.7);
+      background: rgba(3, 7, 18, 0.98);
+      margin-top: 2.2rem;
     }
-    .footer-inner {
-      display:flex; flex-wrap:wrap; justify-content:space-between;
-      gap:10px; align-items:center;
-    }
-    .footer-links { display:flex; gap:10px; }
-    .footer-links a { text-decoration:underline; text-decoration-style:dotted; }
 
-    @media (max-width:960px) {
-      .page-hero-inner, .grid-2 {
-        grid-template-columns:minmax(0,1fr);
+    .footer-inner {
+      padding: 1.2rem 0 1.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-light);
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 960px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+      .hero-grid,
+      .card-grid-3,
+      .two-col,
+      .steps-grid,
+      .cta-final {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero {
+        padding-top: 2.3rem;
       }
     }
-    @media (max-width:800px) {
-      .header-inner { flex-wrap:wrap; align-items:flex-start; }
-      nav { width:100%; justify-content:flex-end; flex-wrap:wrap; }
-      .nav-links { display:none; }
+
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+      .section-title {
+        font-size: 1.28rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="shell header-inner">
-      <div class="brand">
-        <div class="brand-mark">IT</div>
-        <div class="brand-text">
-          <span>Instituto Tanigawa</span>
-          <span>Vida • Família • Negócios</span>
-        </div>
+  <div class="page" id="topo">
+    <header>
+      <div class="wrapper">
+        <nav class="nav">
+          <div class="nav-left">
+            <div class="brand-mark" aria-label="Instituto Tanigawa">
+              <span>IT</span>
+            </div>
+            <div class="brand-text">
+              <strong>Instituto Tanigawa</strong>
+              <span>Vida • Espírito • Propósito</span>
+            </div>
+          </div>
+          <div class="nav-links">
+            <a href="index.html#inicio">Início</a>
+            <a href="mentorias.html">Mentorias</a>
+            <a href="#inicio">Projeto NR-1</a>
+            <a href="devocionais.html">Devocionais</a>
+            <a href="index.html#sobre">Sobre</a>
+            <a href="index.html#contato">Contato</a>
+          </div>
+          <div class="nav-cta">
+            <button class="mobile-menu-btn" type="button">Menu</button>
+            <a href="#como-funciona" class="btn btn-ghost">Como funciona</a>
+            <a href="index.html#contato" class="btn btn-primary">
+              Quero apresentar à minha empresa
+            </a>
+          </div>
+        </nav>
       </div>
-      <nav>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="sobre.html">Sobre</a>
-          <a href="mentorias.html">Mentorias</a>
-          <a href="servicos.html">Serviços</a>
-          <a href="nr1.html">Projeto NR-1</a>
-          <a href="contato.html">Contato</a>
-        </div>
-        <div class="nav-cta">
-          <a href="#contato" class="btn btn-ghost">Baixar visão executiva</a>
-          <a href="#contato" class="btn btn-primary">Falar sobre minha empresa</a>
-        </div>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <!-- HERO NR-1 -->
-    <section>
-      <div class="shell page-hero-inner">
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="inicio">
+        <div class="wrapper hero-grid">
+          <div>
+            <div class="pill">
+              <span class="pill-dot"></span>
+              <span>INSTITUTO TANIGAWA • NR-1</span>
+            </div>
+            <h1 class="hero-title">
+              NR-1 não é só documento,
+              <span class="highlight">é cuidado real com gente de verdade</span>
+            </h1>
+            <p class="hero-subtitle">
+              O Instituto Tanigawa ajuda empresas a tirarem a NR-1 do papel,
+              estruturando diagnósticos psicossociais, evidências e relatórios
+              alinhados ao PGR, GRO e à realidade de quem está na linha de frente.
+            </p>
+
+            <div class="hero-cta-row">
+              <a href="#como-funciona" class="btn btn-primary">
+                Entender o passo a passo
+              </a>
+              <a href="index.html#contato" class="btn btn-ghost">
+                Falar com o Instituto Tanigawa
+              </a>
+            </div>
+            <p class="hero-note">
+              Desenvolvido por <strong>Instituto Tanigawa</strong> – integrando NR-1, saúde
+              mental corporativa, psicologia organizacional e automação.
+            </p>
+          </div>
+
+          <aside class="hero-card" aria-label="Resumo do projeto NR-1 Instituto Tanigawa">
+            <div class="hero-badge">Visão do projeto</div>
+            <h2 class="hero-card-title">NR-1 como sistema vivo, não como burocracia</h2>
+            <p>
+              O foco é construir um fluxo contínuo: cadastro de empresas,
+              colaboradores, aplicação do questionário psicossocial, análise,
+              relatórios e plano de ação – tudo com rastreabilidade e respeito
+              à LGPD.
+            </p>
+            <ul class="hero-list">
+              <li>Baseado na NR-1, PGR e GRO</li>
+              <li>Integração com diagnóstico psicossocial</li>
+              <li>Visão técnica, humana e espiritual da saúde ocupacional</li>
+            </ul>
+            <small>
+              Não é um “pacote genérico”, é um projeto construído para ser
+              auditável, explicável e aplicável em diferentes realidades
+              organizacionais.
+            </small>
+          </aside>
+        </div>
+      </section>
+
+      <!-- PARA QUEM É -->
+      <section id="para-quem">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Para quem é</div>
+            <h2 class="section-title">Quem mais se beneficia do INSTITUTO TANIGAWA • NR-1?</h2>
+            <p class="section-subtitle">
+              O projeto foi desenhado para empresas que entenderam que NR-1 não
+              é só “evitar multa”, mas construir ambiente saudável e sustentável
+              para pessoas e resultados.
+            </p>
+          </div>
+
+          <div class="card-grid-3">
+            <article class="card">
+              <div class="card-tag">Empresas & organizações</div>
+              <h3>Empresas que precisam organizar o PGR e o GRO</h3>
+              <p>
+                Organizações que sabem que precisam sair do improviso e estruturar
+                evidências claras de diagnóstico psicossocial e gestão de riscos.
+              </p>
+              <ul>
+                <li>Indústrias, serviços, comércio</li>
+                <li>Instituições de ensino, igrejas, terceiro setor</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-tag">Gestores</div>
+              <h3>Diretores, RH, SST e C-level</h3>
+              <p>
+                Líderes que respondem por pessoas, clima e resultados, e
+                precisam de um sistema que converse com a operação, não só com
+                o jurídico.
+              </p>
+              <ul>
+                <li>Diretoria, gerência, coordenações</li>
+                <li>Profissionais de RH, DP e Segurança do Trabalho</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-tag">Consultores</div>
+              <h3>Consultorias em SST e psicologia organizacional</h3>
+              <p>
+                Parceiros que precisam de uma base metodológica sólida e de um
+                sistema que organize dados, relatórios e evidências.
+              </p>
+              <ul>
+                <li>Consultores em NR-1, PGR, GRO</li>
+                <li>Psicólogos do trabalho e clínicas parceiras</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- O QUE O PROJETO ENTREGA -->
+      <section id="entregas">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Entregas principais</div>
+            <h2 class="section-title">O que o Instituto Tanigawa ajuda a estruturar</h2>
+            <p class="section-subtitle">
+              Mais do que um documento final, o projeto NR-1 organiza um
+              ecossistema de informações, fluxos e responsabilidades.
+            </p>
+          </div>
+
+          <div class="two-col">
+            <div class="stack">
+              <p><strong>1. Cadastro estruturado de empresas e colaboradores</strong></p>
+              <p>
+                Coleta organizada de dados da empresa (CNPJ, CNAE, setores,
+                quantidade de colaboradores) e vinculação de cada colaborador à
+                sua realidade de trabalho.
+              </p>
+
+              <p><strong>2. Questionário psicossocial alinhado à NR-1</strong></p>
+              <p>
+                Instrumentos voltados à identificação de riscos psicossociais,
+                exaustão, sobrecarga, clima e percepção de segurança,
+                respeitando princípios da NR-1 e das normas correlatas.
+              </p>
+
+              <p><strong>3. Registro de evidências e rastreabilidade</strong></p>
+              <p>
+                Metodologia pensada para gerar evidências de aplicação,
+                controle de respostas, datas, tokens (quando aplicável) e
+                trilhas de auditoria.
+              </p>
+            </div>
+
+            <div class="stack">
+              <p><strong>4. Leitura técnica dos dados e visão psicossocial</strong></p>
+              <p>
+                Interpretação dos resultados com olhar combinado: técnico,
+                psicossocial e humano – conectando números à realidade do dia a
+                dia dos colaboradores.
+              </p>
+
+              <p><strong>5. Suporte à construção de planos de ação</strong></p>
+              <p>
+                Apoio na leitura dos achados e na priorização de ações, para que
+                o diagnóstico se transforme em decisões práticas e
+                monitoráveis.
+              </p>
+
+              <div class="chip-row">
+                <span class="chip">Conformidade NR-1</span>
+                <span class="chip">PGR &amp; GRO integrados</span>
+                <span class="chip">Visão psicossocial</span>
+                <span class="chip">LGPD respeitada</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMO FUNCIONA NA PRÁTICA -->
+      <section id="como-funciona">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Fluxo básico</div>
+            <h2 class="section-title">Como o projeto NR-1 funciona na prática</h2>
+            <p class="section-subtitle">
+              O desenho detalhado é adaptado à realidade da empresa, mas o
+              fluxo geral segue quatro movimentos principais.
+            </p>
+          </div>
+
+          <div class="steps-grid">
+            <article class="step-card">
+              <div class="step-number">1</div>
+              <strong>Diagnóstico inicial com a liderança</strong>
+              <p>
+                Conversa com direção, RH e SST para entender contexto,
+                maturidade em NR-1, principais dores e urgências.
+              </p>
+            </article>
+
+            <article class="step-card">
+              <div class="step-number">2</div>
+              <strong>Desenho do fluxo de aplicação</strong>
+              <p>
+                Definição de escopo, prazos, setores incluídos, cronograma de
+                aplicação do questionário e de retornos.
+              </p>
+            </article>
+
+            <article class="step-card">
+              <div class="step-number">3</div>
+              <strong>Aplicação do questionário psicossocial</strong>
+              <p>
+                Execução segura e organizada, respeitando sigilo, ética, LGPD e
+                orientações da NR-1.
+              </p>
+            </article>
+
+            <article class="step-card">
+              <div class="step-number">4</div>
+              <strong>Relatórios, devolutiva e plano de ação</strong>
+              <p>
+                Entrega de leitura técnica, devolutiva estruturada e apoio à
+                construção do plano de ação, integrando PGR e GRO.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- BENEFÍCIOS -->
+      <section id="beneficios">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Resultados esperados</div>
+            <h2 class="section-title">Quais benefícios práticos a empresa pode esperar?</h2>
+            <p class="section-subtitle">
+              A NR-1, quando bem aplicada, protege a empresa, os gestores e,
+              principalmente, quem está todos os dias no chão de fábrica, no
+              escritório ou no campo.
+            </p>
+          </div>
+
+          <div class="card-grid-3">
+            <article class="card">
+              <div class="card-tag">Conformidade</div>
+              <h3>Base sólida para inspeções e auditorias</h3>
+              <p>
+                Evidências organizadas, relatórios claros e rastreáveis, que
+                mostram não apenas que algo foi feito, mas como foi feito.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-tag">Clima &amp; saúde</div>
+              <h3>Olhar real para o que as pessoas vivem</h3>
+              <p>
+                Dados que revelam riscos psicossociais, pontos de desgaste e
+                oportunidades de cuidado, permitindo ações mais cirúrgicas.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-tag">Gestão</div>
+              <h3>Decisões mais responsáveis e sustentáveis</h3>
+              <p>
+                Direcionamento para que a liderança tome decisões alinhadas com
+                as normas, com a saúde das pessoas e com a visão de futuro da
+                organização.
+              </p>
+            </article>
+          </div>
+
+          <!-- CTA FINAL -->
+          <div class="cta-final">
+            <div>
+              <h3 style="margin-bottom:0.4rem;">Se a NR-1 está no radar da sua empresa, esse é o momento de estruturar, não de improvisar.</h3>
+              <p>
+                O Instituto Tanigawa pode caminhar junto com sua equipe técnica
+                e liderança para transformar a obrigação legal em oportunidade
+                de cuidado verdadeiro com as pessoas.
+              </p>
+            </div>
+            <div class="cta-final-actions">
+              <a href="index.html#contato" class="btn btn-primary">
+                Quero falar sobre NR-1 na minha empresa
+              </a>
+              <a href="mentorias.html" class="btn btn-ghost">
+                Ver outras frentes do Instituto Tanigawa
+              </a>
+              <small>
+                Ao entrar em contato, você não assume nenhum compromisso imediato.
+                Está apenas dando o primeiro passo para fazer a coisa certa da
+                maneira certa.
+              </small>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrapper footer-inner">
         <div>
-          <div class="eyebrow">NR-1 • Psicossocial • Saúde mental corporativa</div>
-          <h1 class="page-title">Conformidade com o MTE, dados confiáveis e cuidado real com pessoas.</h1>
-          <p class="page-subtitle">
-            O Projeto NR-1 do Instituto Tanigawa integra diagnóstico psicossocial, fluxos,
-            tecnologia e leitura humana para que empresas, escolas, igrejas e organizações
-            cumpram a norma — e ao mesmo tempo cuidem de quem faz tudo acontecer.
-          </p>
-          <div class="hero-tags">
-            <span class="tag-pill">NR-1, PGR & GRO</span>
-            <span class="tag-pill">Saúde mental & psicossocial</span>
-            <span class="tag-pill">Ambientes mais humanos</span>
-          </div>
+          <strong>Instituto Tanigawa</strong><br />
+          <span>Cuidado com pessoas, líderes e organizações.</span>
         </div>
-
-        <aside class="hero-card">
-          <div class="hero-card-inner">
-            <h3>Não é só papel, é gente.</h3>
-            <p>
-              Nosso compromisso é unir conformidade legal, robustez técnica e profundidade
-              humana. O resultado são dados confiáveis para decisões, segurança diante
-              do MTE e, principalmente, colaboradores que se sentem vistos, ouvidos e
-              cuidados.
-            </p>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- PARA QUEM É -->
-    <section id="para-quem">
-      <div class="shell">
-        <div class="section-heading">
-          <h2>Para quem o Projeto NR-1 foi desenhado?</h2>
-          <p>
-            Atendemos organizações que entenderam que saúde mental, risco psicossocial e
-            cultura não são “moda”, mas pilares de sobrevivência, performance e legado.
-          </p>
+        <div class="footer-links">
+          <a href="#topo">Voltar ao topo</a>
+          <a href="mentorias.html">Mentorias</a>
+          <a href="#inicio">Projeto NR-1</a>
+          <a href="devocionais.html">Devocionais</a>
         </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <span class="badge">Empresas privadas</span>
-            <h3>Indústrias, comércios, serviços e startups</h3>
-            <p>
-              Organizações que precisam cumprir NR-1, NR-7, NR-9, PGR e GRO, mas não
-              querem projetos genéricos, desconectados da realidade das equipes.
-            </p>
-            <ul class="list">
-              <li>• Times dispersos, híbridos ou presenciais.</li>
-              <li>• Exposição a alta carga emocional e pressão de resultados.</li>
-              <li>• Necessidade de relatórios claros para diretoria e auditorias.</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <span class="badge">Setor social & fé</span>
-            <h3>Igrejas, escolas, ONGs e instituições</h3>
-            <p>
-              Ambientes com grande fluxo de pessoas, voluntários, líderes e equipes,
-              onde o esgotamento emocional e espiritual pode afetar a missão.
-            </p>
-            <ul class="list">
-              <li>• Equipes de liderança sob carga constante.</li>
-              <li>• Voluntários, obreiros e colaboradores sobrecarregados.</li>
-              <li>• Desejo de alinhar cuidado, cultura e legislação.</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <span class="badge">Lideranças</span>
-            <h3>Diretores, RHs, gestores e conselhos</h3>
-            <p>
-              Decisores que precisam de dados, indicadores e leituras confiáveis
-              para agir antes que o problema exploda — e não apenas depois.
-            </p>
-            <ul class="list">
-              <li>• Visão integrada entre jurídico, SST, RH e liderança.</li>
-              <li>• Painéis simples para tomada de decisão.</li>
-              <li>• Narrativas claras para órgãos fiscalizadores.</li>
-            </ul>
-          </article>
+        <div>
+          <span>CNPJ 00.000.000/0000-00 • © <span id="anoAtual">2025</span> Instituto Tanigawa</span>
         </div>
       </div>
-    </section>
-
-    <!-- COMO FUNCIONA -->
-    <section id="como-funciona">
-      <div class="shell">
-        <div class="section-heading">
-          <h2>Como o Projeto NR-1 do Instituto Tanigawa funciona na prática?</h2>
-          <p>
-            Não é uma “planilha pronta”: é um ecossistema customizável, com base
-            legal, estrutura técnica e leitura humana. Em resumo, o fluxo segue estes passos:
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <div class="pill-row">
-              <span class="pill-soft">1. Diagnóstico & desenho</span>
-            </div>
-            <h3>Mapeamos a realidade da sua organização</h3>
-            <p>
-              O primeiro movimento é entender o seu contexto: ramo de atividade, número
-              de colaboradores, estrutura de setores, histórico de ações em saúde mental,
-              exigências de clientes e órgãos reguladores.
-            </p>
-            <ul class="list">
-              <li>• Entrevistas com direção, RH, SST e lideranças-chave.</li>
-              <li>• Leitura de documentos já existentes (PGR, PCMSO etc.).</li>
-              <li>• Desenho do escopo psicossocial e de cultura.</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <div class="pill-row">
-              <span class="pill-soft">2. Coleta segura de dados</span>
-            </div>
-            <h3>Questionários psicossociais com tokens e trilhas digitais</h3>
-            <p>
-              Utilizamos questionários estruturados (NR-1 / riscos psicossociais) com
-              tokens individuais, garantindo:
-            </p>
-            <ul class="list">
-              <li>• Rastreabilidade sem exposição da identidade nas análises gerais.</li>
-              <li>• Prevenção de respostas duplicadas.</li>
-              <li>• Escalabilidade para dezenas, centenas ou milhares de colaboradores.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="grid-2" style="margin-top:22px;">
-          <div class="card">
-            <div class="pill-row">
-              <span class="pill-soft">3. Análise & leitura integrada</span>
-            </div>
-            <h3>Transformando números em decisões</h3>
-            <p>
-              Com os dados coletados, produzimos leituras quantitativas e qualitativas,
-              combinando visão técnica, legal e humana.
-            </p>
-            <ul class="list">
-              <li>• Mapas de risco psicossocial por empresa, setor e função.</li>
-              <li>• Indícios de esgotamento, conflitos, injustiças e adoecimentos.</li>
-              <li>• Recomendações práticas para gestão, RH e SST.</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <div class="pill-row">
-              <span class="pill-soft">4. Devolutivas & plano de cuidado</span>
-            </div>
-            <h3>Relatórios, reuniões e próximos passos</h3>
-            <p>
-              A partir das leituras, fazemos devolutivas estruturadas, com linguagem
-              executiva, pastoral e técnica.
-            </p>
-            <ul class="list">
-              <li>• Relatórios para direção e RH.</li>
-              <li>• Recomendações para PGR, PCMSO, treinamentos e cultura.</li>
-              <li>• Possibilidade de mentorias e acompanhamentos para lideranças-chave.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DIFERENCIAIS -->
-    <section id="diferenciais">
-      <div class="shell">
-        <div class="section-heading">
-          <h2>O que diferencia o Projeto NR-1 do Instituto Tanigawa?</h2>
-          <p>
-            Mais do que uma ferramenta, é uma forma de pensar pessoas, trabalho e risco
-            psicossocial sob uma perspectiva integral.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="pill-row">
-              <span class="pill-soft">Base legal + cuidado real</span>
-            </div>
-            <h3>Conformidade sem desumanizar</h3>
-            <p>
-              Respeitamos a legislação (NR-1, PGR, GRO, NR-7, NR-9), mas não reduzimos
-              pessoas a índices. O sistema foi pensado para que dados sirvam a decisões
-              que protegem e valorizam vidas.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="pill-row">
-              <span class="pill-soft">Tecnologia acessível</span>
-            </div>
-            <h3>Fluxos digitais, sem complicar</h3>
-            <p>
-              Utilizamos tecnologias acessíveis (Google, dashboards, automações) com
-              linguagem clara e suporte, permitindo que sua equipe consiga operar,
-              monitorar e evoluir o sistema.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="pill-row">
-              <span class="pill-soft">Leitura humana</span>
-            </div>
-            <h3>Dados que geram conversas importantes</h3>
-            <p>
-              Nossos relatórios não ficam apenas no digital. Eles abrem espaço para
-              conversas, ajustes de rota, revisões de cultura e, se desejado, mentorias
-              específicas para líderes e equipes.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ETAPAS EXECUTIVAS -->
-    <section id="etapas">
-      <div class="shell">
-        <div class="section-heading">
-          <h2>Visão executiva das etapas</h2>
-          <p>
-            Em linguagem de diretoria, o Projeto NR-1 pode ser enxergado como um
-            roadmap em quatro grandes entregas:
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="steps">
-            <div class="step-item">
-              <strong>Alinhamento estratégico</strong><br />
-              Escopo, metas, riscos prioritários, públicos envolvidos, cronograma macro
-              e definição de responsabilidades (diretoria, RH, SST, jurídico, TI).
-            </div>
-            <div class="step-item">
-              <strong>Implantação da coleta</strong><br />
-              Configuração dos questionários, tokens, fluxos de convite, canais de
-              comunicação, orientação de líderes e abertura oficial do processo.
-            </div>
-            <div class="step-item">
-              <strong>Leitura de resultados & relatórios</strong><br />
-              Consolidação dos dados, análise dos níveis de risco, cruzamento com
-              informações da empresa e produção de relatórios gerenciais.
-            </div>
-            <div class="step-item">
-              <strong>Plano de ação & acompanhamento</strong><br />
-              Conversão dos achados em ações: treinamentos, ajustes de processos,
-              comunicações internas, monitoramento contínuo e, se necessário, novas
-              rodadas de avaliação.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq">
-      <div class="shell">
-        <div class="section-heading">
-          <h2>Perguntas frequentes de empresas e lideranças</h2>
-          <p>
-            Algumas respostas iniciais para facilitar a tomada de decisão interna.
-          </p>
-        </div>
-
-        <div class="faq">
-          <div class="faq-item">
-            <div class="faq-question">Qual é o tamanho mínimo de empresa para o Projeto NR-1?</div>
-            <div class="faq-answer">
-              Atendemos desde organizações menores (a partir de algumas dezenas de
-              colaboradores) até empresas com centenas ou milhares de pessoas. O desenho
-              do projeto é feito sob medida para a sua realidade.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">Vocês trabalham apenas com empresas cristãs?</div>
-            <div class="faq-answer">
-              Não. Atuamos com empresas e organizações em geral. Nossa base de valores
-              é cristã, mas o projeto é apresentado em linguagem executiva, respeitando
-              o contexto de cada instituição.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">Como é definido investimento e prazo?</div>
-            <div class="faq-answer">
-              Tudo é calculado a partir de variáveis como número de colaboradores, número
-              de CNPJs, complexidade da estrutura, regiões atendidas, nível de personalização
-              e entregas desejadas (relatórios, dashboards, treinamentos etc.).
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA FINAL -->
-    <section id="contato">
-      <div class="shell">
-        <div class="cta-panel">
-          <p>
-            Se você é diretor, gestor, RH, pastor-presidente ou responsável por uma
-            organização e percebe que precisa estruturar o tema “NR-1, psicossocial
-            e saúde mental” com seriedade, o próximo passo é uma conversa executiva.
-            Vamos entender seu cenário e desenhar juntos o melhor formato.
-          </p>
-          <a href="contato.html" class="btn btn-primary">Agendar conversa com o Instituto</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="shell footer-inner">
-      <div>© <span id="year"></span> Instituto Tanigawa. Todos os direitos reservados.</div>
-      <div class="footer-links">
-        <a href="index.html#topo">Home</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="contato.html">Contato</a>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Atualiza ano no rodapé com segurança
+    const spanAno = document.getElementById('anoAtual');
+    if (spanAno) {
+      spanAno.textContent = new Date().getFullYear();
+    }
   </script>
 </body>
 </html>

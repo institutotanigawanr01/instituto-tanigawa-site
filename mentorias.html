@@ -2,576 +2,1847 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Mentorias & Discipulados | Instituto Tanigawa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mentorias e discipulados com Sergio e Wanessa Tanigawa para pessoas, casais, líderes, pastores e empresários. Alinhamento de propósito, identidade, família, ministério e negócios." />
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Sora:wght@300;400;500;700&display=swap" rel="stylesheet" />
-
+  <title>Mentorias – Instituto Tanigawa</title>
+  <meta name="description" content="Mentorias do Instituto Tanigawa para pessoas, casais, líderes e empresários. Acompanhamento profundo, bíblico e prático para decisões reais.">
   <style>
-    :root {
-      --bg: #f5f7fa;
-      --bg-alt: #ffffff;
-      --bg-soft: #e3edf5;
-      --text: #102033;
-      --text-soft: #4d6179;
-      --accent: #0f6299;
-      --accent-soft: #1ba5b8;
-      --accent-soft-2: #88c8b8;
-      --border-soft: #d4dde8;
-      --shadow-soft: 0 18px 40px rgba(4, 25, 53, 0.12);
-      --radius-lg: 24px;
-      --radius-md: 16px;
-      --radius-pill: 999px;
-      --transition-fast: 0.18s ease-out;
-      --transition-med: 0.25s ease;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    [data-theme="dark"] {
-      --bg: #050713;
-      --bg-alt: #0c1321;
-      --bg-soft: #121b2c;
-      --text: #f7fbff;
-      --text-soft: #c2cde0;
-      --accent: #47b5ff;
-      --accent-soft: #37d4c6;
-      --accent-soft-2: #96f2c6;
-      --border-soft: #28344a;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.7);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Sora", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, rgba(28, 81, 142, 0.12), transparent 55%), var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
 
-    .shell { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    :root {
+      --bg-main: #020617;
+      --bg-alt: #030712;
+      --bg-section: #050a1b;
+      --accent: #3b82f6;
+      --accent-soft: #1d4ed8;
+      --accent-light: #93c5fd;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-soft: #1f2937;
+      --radius-lg: 18px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.65);
+      --max-width: 1120px;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 60%, #000 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
 
     header {
       position: sticky;
       top: 0;
       z-index: 50;
-      backdrop-filter: blur(16px);
-      background: linear-gradient(to bottom, rgba(245, 247, 250, 0.95), rgba(245, 247, 250, 0.7));
-      border-bottom: 1px solid rgba(212, 221, 232, 0.6);
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.85), transparent);
+      border-bottom: 1px solid rgba(55, 65, 81, 0.65);
     }
-    [data-theme="dark"] header {
-      background: linear-gradient(to bottom, rgba(5, 7, 19, 0.97), rgba(5, 7, 19, 0.8));
-      border-bottom-color: rgba(40, 52, 74, 0.7);
-    }
-    .header-inner {
+
+    .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      padding: 14px 0;
+      padding: 0.9rem 0;
+      gap: 1rem;
     }
-    .brand { display: flex; align-items: center; gap: 12px; }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
     .brand-mark {
-      width: 40px; height: 40px; border-radius: 14px;
-      background: radial-gradient(circle at 20% 15%, #ffffff 0, #cfe7ff 30%, #0f6299 100%);
-      display:flex; align-items:center; justify-content:center;
-      box-shadow:0 10px 25px rgba(12,70,128,0.4);
-      font-weight:700; font-size:18px; color:#0a2540;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #bfdbfe, #3b82f6 35%, #020617 100%);
+      box-shadow: 0 0 24px rgba(59, 130, 246, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.05rem;
     }
-    .brand-text { display:flex; flex-direction:column; gap:2px; }
-    .brand-text span:first-child {
-      font-family:"Playfair Display",serif;
-      font-size:18px; letter-spacing:0.06em; text-transform:uppercase;
+
+    .brand-mark span {
+      display: inline-block;
+      transform: translateY(0.5px);
     }
-    .brand-text span:last-child {
-      font-size:11px; text-transform:uppercase;
-      letter-spacing:0.18em; color:var(--text-soft);
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
     }
-    nav { display:flex; align-items:center; gap:10px; }
+
+    .brand-text strong {
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand-text span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
     .nav-links {
-      display:flex; align-items:center; gap:14px;
-      font-size:13px; text-transform:uppercase; letter-spacing:0.16em;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.9rem;
     }
+
     .nav-links a {
-      padding:6px 8px; border-radius:999px;
-      color:var(--text-soft);
-      transition:background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+      position: relative;
+      color: var(--text-muted);
+      padding-bottom: 2px;
     }
+
     .nav-links a:hover {
-      background:rgba(15,98,153,0.08);
-      color:var(--accent);
-      transform:translateY(-1px);
+      color: var(--text-main);
     }
-    .nav-cta { display:flex; align-items:center; gap:8px; }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
     .btn {
-      border:none; outline:none;
-      border-radius:var(--radius-pill); padding:9px 18px;
-      font-size:13px; font-weight:500;
-      letter-spacing:0.08em; text-transform:uppercase;
-      cursor:pointer; display:inline-flex; align-items:center; gap:8px;
-      transition:background var(--transition-med), color var(--transition-med), box-shadow var(--transition-med), transform var(--transition-fast);
-      white-space:nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid transparent;
+      padding: 0.45rem 0.9rem;
+      white-space: nowrap;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background-color 0.12s, border-color 0.12s, color 0.12s;
     }
+
     .btn-primary {
-      background:linear-gradient(135deg,var(--accent),var(--accent-soft));
-      color:#fff; box-shadow:0 12px 30px rgba(15,98,153,0.4);
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+      color: #020617;
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.7);
+      border-color: rgba(191, 219, 254, 0.5);
     }
-    .btn-primary:hover { transform:translateY(-1px); box-shadow:0 18px 40px rgba(15,98,153,0.6); }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(37, 99, 235, 0.9);
+    }
+
     .btn-ghost {
-      background:transparent; color:var(--text-soft);
-      border:1px solid var(--border-soft);
-    }
-    .btn-ghost:hover { background:rgba(255,255,255,0.08); color:var(--accent); }
-    .theme-toggle {
-      border-radius:999px; padding:6px 12px;
-      font-size:12px;
-      background:rgba(12,19,37,0.04);
-      color:var(--text-soft);
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--text-muted);
+      border-color: rgba(75, 85, 99, 0.9);
     }
 
-    main { padding-bottom:80px; }
-    section { padding:60px 0; }
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
 
-    .eyebrow {
-      font-size:12px; text-transform:uppercase;
-      letter-spacing:0.2em; color:var(--accent-soft);
-      margin-bottom:10px;
+    .mobile-menu-btn {
+      display: none;
+      border-radius: 999px;
+      border: 1px solid rgba(75, 85, 99, 0.85);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.35rem 0.7rem;
+      font-size: 0.8rem;
+      color: var(--text-main);
     }
-    .page-hero-inner {
-      padding-top:40px;
-      display:grid;
-      grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);
-      gap:34px;
-      align-items:center;
+
+    main {
+      flex: 1;
     }
-    .page-title {
-      font-family:"Playfair Display",serif;
-      font-size:clamp(30px,4vw,38px);
-      line-height:1.15; margin-bottom:14px;
+
+    /* HERO */
+    .hero {
+      padding: 3.2rem 0 2.6rem;
     }
-    .page-subtitle {
-      font-size:15px; color:var(--text-soft); max-width:560px;
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.3rem;
+      align-items: center;
     }
-    .tag-pill {
-      border-radius:999px;
-      padding:6px 12px;
-      background:rgba(255,255,255,0.7);
-      border:1px solid var(--border-soft);
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      font-size:11px;
-      color:var(--text-soft);
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
     }
-    [data-theme="dark"] .tag-pill {
-      background:rgba(10,15,26,0.9);
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.85);
     }
-    .hero-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+
+    .hero-title {
+      font-size: 2.3rem;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(120deg, #93c5fd, #e0f2fe, #93c5fd);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 32rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-note strong {
+      color: var(--accent-light);
+    }
 
     .hero-card {
-      position:relative;
-      background:radial-gradient(circle at 10% 0, rgba(255,255,255,0.12), transparent 60%), var(--bg-alt);
-      border-radius:24px;
-      box-shadow:var(--shadow-soft);
-      padding:22px;
-      overflow:hidden;
-    }
-    .hero-card::before {
-      content:"";
-      position:absolute;
-      inset:-40%;
-      opacity:0.25;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(71,181,255,0.25), transparent 60%),
-        radial-gradient(circle at 70% 80%, rgba(55,212,198,0.3), transparent 60%);
-      pointer-events:none;
-    }
-    .hero-card-inner { position:relative; z-index:1; }
-    .hero-card-inner h3 { font-size:18px; margin-bottom:6px; }
-    .hero-card-inner p { font-size:13px; color:var(--text-soft); }
-
-    .section-heading {
-      display:flex; flex-direction:column; gap:6px;
-      margin-bottom:26px;
-    }
-    .section-heading h2 {
-      font-family:"Playfair Display",serif;
-      font-size:24px;
-    }
-    .section-heading p {
-      font-size:14px; color:var(--text-soft); max-width:600px;
+      background: radial-gradient(circle at top left, #1d4ed8 0, #020617 40%, #020617 100%);
+      border-radius: 26px;
+      padding: 1.4rem 1.3rem 1.5rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      position: relative;
+      overflow: hidden;
     }
 
-    .grid-2 {
-      display:grid;
-      grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
-      gap:28px;
+    .hero-badge-corner {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      font-size: 0.7rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      color: var(--accent-light);
+    }
+
+    .hero-badge {
+      font-size: 0.78rem;
+      color: var(--accent-light);
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .hero-card-title {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-card-text {
+      font-size: 0.85rem;
+      color: #e5e7eb;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-pill-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.45rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-pill {
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: 999px;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.75rem;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* SEÇÕES GENÉRICAS */
+    section {
+      padding: 2.2rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+    }
+
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
     }
 
     .card {
-      background:var(--bg-alt);
-      border-radius:var(--radius-md);
-      border:1px solid var(--border-soft);
-      box-shadow:0 10px 26px rgba(8,21,40,0.08);
-      padding:20px 22px;
-      position:relative; overflow:hidden;
-    }
-    .card h3 { font-size:18px; margin-bottom:8px; }
-    .card p { font-size:14px; color:var(--text-soft); }
-
-    .pill-row { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; }
-    .pill-soft {
-      font-size:11px;
-      padding:4px 10px;
-      border-radius:999px;
-      background:rgba(15,98,153,0.08);
-      color:var(--accent);
-    }
-    .list { font-size:13px; color:var(--text-soft); margin-top:8px; }
-    .list li + li { margin-top:4px; }
-
-    .faq {
-      border-radius:var(--radius-md);
-      border:1px solid var(--border-soft);
-      background:var(--bg-alt);
-      padding:18px 18px 16px;
-      box-shadow:0 10px 26px rgba(8,21,40,0.08);
-    }
-    .faq-item + .faq-item { margin-top:10px; }
-    .faq-question {
-      font-size:14px; font-weight:600;
-      margin-bottom:4px;
-    }
-    .faq-answer {
-      font-size:13px; color:var(--text-soft);
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      padding: 1rem;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.8);
     }
 
-    .cta-panel {
-      margin-top:40px;
-      border-radius:24px;
-      padding:22px 20px;
-      background:linear-gradient(135deg,rgba(15,98,153,0.06),rgba(55,212,198,0.04));
-      border:1px dashed rgba(27,165,184,0.6);
-      display:flex; flex-wrap:wrap; gap:14px;
-      align-items:center; justify-content:space-between;
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
     }
-    .cta-panel p { font-size:14px; color:var(--text-soft); max-width:620px; }
 
+    .card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      color: var(--accent-light);
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .card-footer-link {
+      font-size: 0.8rem;
+      color: var(--accent-light);
+    }
+
+    .card-footer-link span {
+      opacity: 0.85;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.8rem;
+    }
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .stack strong {
+      color: var(--text-main);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.4rem;
+    }
+
+    .chip {
+      border-radius: 999px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      padding: 0.25rem 0.6rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* BLOCO PASSO A PASSO */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .step-card {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .step-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #020617;
+      font-weight: 700;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      color: var(--text-main);
+    }
+
+    /* CTA FINAL */
+    .cta-final {
+      background: linear-gradient(135deg, #1d4ed8, #0b1120);
+      border-radius: 22px;
+      padding: 1.4rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(191, 219, 254, 0.6);
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+      gap: 1.4rem;
+      align-items: center;
+      margin-top: 1.8rem;
+    }
+
+    .cta-final p {
+      font-size: 0.9rem;
+    }
+
+    .cta-final small {
+      font-size: 0.75rem;
+      opacity: 0.9;
+    }
+
+    .cta-final-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .cta-final-actions .btn-primary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* FOOTER */
     footer {
-      border-top:1px solid var(--border-soft);
-      padding:18px 0 28px;
-      font-size:12px; color:var(--text-soft);
+      border-top: 1px solid rgba(55, 65, 81, 0.7);
+      background: rgba(3, 7, 18, 0.98);
+      margin-top: 2.2rem;
     }
-    .footer-inner {
-      display:flex; flex-wrap:wrap; justify-content:space-between;
-      gap:10px; align-items:center;
-    }
-    .footer-links { display:flex; gap:10px; }
-    .footer-links a { text-decoration:underline; text-decoration-style:dotted; }
 
-    @media (max-width:960px) {
-      .page-hero-inner, .grid-2 {
-        grid-template-columns:minmax(0,1fr);
+    .footer-inner {
+      padding: 1.2rem 0 1.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-light);
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 960px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+      .hero-grid,
+      .two-col,
+      .card-grid-3,
+      .steps-grid,
+      .cta-final {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero {
+        padding-top: 2.3rem;
       }
     }
-    @media (max-width:800px) {
-      .header-inner { flex-wrap:wrap; align-items:flex-start; }
-      nav { width:100%; justify-content:flex-end; flex-wrap:wrap; }
-      .nav-links { display:none; }
+
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+      .section-title {
+        font-size: 1.28rem;
+      }
     }
   </style>
 </head>
-<body data-theme="light">
-  <header>
-    <div class="shell header-inner">
-      <div class="brand">
-        <div class="brand-mark">IT</div>
-        <div class="brand-text">
-          <span>Instituto Tanigawa</span>
-          <span>Vida • Família • Negócios</span>
-        </div>
+<body>
+  <div class="page" id="topo">
+    <header>
+      <div class="wrapper">
+        <nav class="nav">
+          <div class="nav-left">
+            <div class="brand-mark" aria-label="Instituto Tanigawa">
+              <span>IT</span>
+            </div>
+            <div class="brand-text">
+              <strong>Instituto Tanigawa</strong>
+              <span>Vida • Espírito • Propósito</span>
+            </div>
+          </div>
+          <div class="nav-links">
+            <a href="index.html#inicio">Início</a>
+            <a href="#formatos">Mentorias</a>
+            <a href="index.html#nr1">Projeto NR-1</a>
+            <a href="index.html#devocionais">Devocionais</a>
+            <a href="index.html#sobre">Sobre</a>
+            <a href="index.html#contato">Contato</a>
+          </div>
+          <div class="nav-cta">
+            <button class="mobile-menu-btn" type="button">Menu</button>
+            <a href="#formatos" class="btn btn-ghost">Ver formatos</a>
+            <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              Quero ser mentorado
+            </a>
+          </div>
+        </nav>
       </div>
-      <nav>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="sobre.html">Sobre</a>
-          <a href="mentorias.html">Mentorias</a>
-          <a href="index.html#discipulado">Discipulado</a>
-          <a href="servicos.html">Serviços</a>
-          <a href="nr1.html">Projeto NR-1</a>
-          <a href="contato.html">Contato</a>
-        </div>
-        <div class="nav-cta">
-          <button class="btn btn-ghost theme-toggle" id="themeToggle">Modo Escuro</button>
-          <a href="#pre-cadastro" class="btn btn-primary">Fazer pré-cadastro</a>
-        </div>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <!-- HERO MENTORIAS -->
-    <section>
-      <div class="shell page-hero-inner">
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="inicio">
+        <div class="wrapper hero-grid">
+          <div>
+            <div class="pill">
+              <span class="pill-dot"></span>
+              <span>Mentorias Instituto Tanigawa</span>
+            </div>
+            <h1 class="hero-title">
+              Mentoria para quem precisa
+              <span class="highlight">de direção, não só de conteúdo</span>
+            </h1>
+            <p class="hero-subtitle">
+              Se Deus já tem te inquietado, mas você ainda não organizou essa
+              nova fase, a mentoria do Instituto Tanigawa é um espaço seguro
+              para alinhar vida, espírito e decisões com clareza.
+            </p>
+
+            <div class="hero-cta-row">
+              <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                Quero entrar na lista de interesse
+              </a>
+              <a href="#formatos" class="btn btn-ghost">
+                Ver formatos de mentoria
+              </a>
+            </div>
+            <p class="hero-note">
+              Conduzido por <strong>Sergio Tanigawa</strong> – pastor, mentor e conselheiro
+              espiritual de líderes, conferencistas e empresários.
+            </p>
+          </div>
+
+          <aside class="hero-card" aria-label="Resumo dos públicos atendidos">
+            <div class="hero-badge-corner">Vagas limitadas por ciclo</div>
+            <div class="hero-badge">Para quem é essa mentoria?</div>
+            <h2 class="hero-card-title">Perfis que mais se beneficiam</h2>
+            <p class="hero-card-text">
+              Pessoas em transição, casais em fase decisiva, líderes de igreja
+              e empresários que não podem mais errar em decisões estratégicas.
+            </p>
+            <div class="hero-pill-grid">
+              <div class="hero-pill">Pessoas em recomeço</div>
+              <div class="hero-pill">Casais & família</div>
+              <div class="hero-pill">Pastores & líderes</div>
+              <div class="hero-pill">Empresários & decisores</div>
+            </div>
+            <p class="hero-card-text">
+              Não é para quem só quer “achar interessante”. É para quem está
+              disposto a rever agenda, prioridades e decisões em obediência.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- FORMATOS -->
+      <section id="formatos">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Formatos disponíveis</div>
+            <h2 class="section-title">Qual mentoria faz mais sentido para você agora?</h2>
+            <p class="section-subtitle">
+              Todas as modalidades carregam a mesma essência, mas com intensidade
+              e foco diferentes. O ponto não é “qual é mais bonita”, e sim qual
+              responde melhor ao que você está vivendo.
+            </p>
+          </div>
+
+          <div class="card-grid-3">
+            <article class="card">
+              <div class="card-tag">Individual</div>
+              <h3>Mentoria de Vida & Espírito</h3>
+              <p>
+                Acompanhamento 1:1 para quem precisa organizar o caos interno,
+                fechar ciclos, perdoar, reposicionar o coração e ouvir Deus com
+                clareza para o próximo passo.
+              </p>
+              <p class="card-footer-link">
+                <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" target="_blank" rel="noopener noreferrer">
+                  <span>Quero informar meu interesse →</span>
+                </a>
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-tag">Casais</div>
+              <h3>Mentoria de Casais & Família</h3>
+              <p>
+                Para casais que sabem que a próxima fase da família exige acordo,
+                cura de histórias antigas, alinhamento espiritual e decisões
+                firmes em unidade.
+              </p>
+              <p class="card-footer-link">
+                <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" target="_blank" rel="noopener noreferrer">
+                  <span>Quero entrar na lista de casais →</span>
+                </a>
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-tag">Alta demanda</div>
+              <h3>Mentoria para Líderes & Empresários</h3>
+              <p>
+                Para quem governa pessoas, recursos e decisões pesadas. Espaço
+                de alinhamento espiritual, emocional e estratégico para não
+                confundir ativismo com direção de Deus.
+              </p>
+              <p class="card-footer-link">
+                <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" target="_blank" rel="noopener noreferrer">
+                  <span>Quero ser considerado nessa turma →</span>
+                </a>
+              </p>
+            </article>
+          </div>
+
+          <div class="card-grid-3" style="margin-top:1.1rem;">
+            <article class="card">
+              <div class="card-tag">Grupos</div>
+              <h3>Mentoria em grupo (turmas fechadas)</h3>
+              <p>
+                Jornadas em grupo para trabalhar temas específicos com uma
+                comunidade que vive lutas parecidas, sempre com acompanhamento
+                próximo e direção clara.
+              </p>
+              <p class="card-footer-link">
+                <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" target="_blank" rel="noopener noreferrer">
+                  <span>Quero ser avisado das próximas turmas →</span>
+                </a>
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-tag">Espiritual</div>
+              <h3>Oração, Intercessão & Guerra Espiritual</h3>
+              <p>
+                Para quem sente que foi chamado para o campo da intercessão e
+                precisa de direção, alinhamento e segurança no exercício desse
+                chamado.
+              </p>
+              <p class="card-footer-link">
+                <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" target="_blank" rel="noopener noreferrer">
+                  <span>Tenho interesse nessa área →</span>
+                </a>
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-tag">Sob medida</div>
+              <h3>Mentoria customizada</h3>
+              <p>
+                Para igrejas, equipes de liderança ou empresas que desejam um
+                desenho específico de encontros, temas e objetivos, alinhados
+                com a realidade local.
+              </p>
+              <p class="card-footer-link">
+                <a href="index.html#contato">
+                  <span>Quero conversar sobre isso →</span>
+                </a>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMO FUNCIONA -->
+      <section id="como-funciona">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Passo a passo</div>
+            <h2 class="section-title">Como funciona, na prática</h2>
+            <p class="section-subtitle">
+              A mentoria é simples na estrutura e profunda no conteúdo. Não é
+              um curso gravado, é acompanhamento com direção, confronto em amor
+              e aplicação prática.
+            </p>
+          </div>
+
+          <div class="steps-grid">
+            <article class="step-card">
+              <div class="step-number">1</div>
+              <strong>Você entra na lista de interesse</strong>
+              <p>
+                Preenche o formulário, conta um pouco do momento que está
+                vivendo e indica o formato de mentoria que faz mais sentido
+                nessa fase.
+              </p>
+            </article>
+
+            <article class="step-card">
+              <div class="step-number">2</div>
+              <strong>Equipe analisa e entra em contato</strong>
+              <p>
+                A equipe lê seu formulário, avalia encaixe com as turmas e
+                formatos disponíveis, e faz o primeiro contato para alinhar
+                expectativas.
+              </p>
+            </article>
+
+            <article class="step-card">
+              <div class="step-number">3</div>
+              <strong>Início da jornada</strong>
+              <p>
+                Você recebe as datas, orientações e materiais de apoio. A partir
+                daí, cada encontro é uma combinação de palavra, direção e
+                aplicação prática.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Perguntas frequentes</div>
+            <h2 class="section-title">Algumas dúvidas que surgem antes de começar</h2>
+            <p class="section-subtitle">
+              Se você está em dúvida se deve ou não entrar, provavelmente já
+              está na hora de organizar esse processo com mais seriedade.
+            </p>
+          </div>
+
+          <div class="two-col">
+            <div class="faq-list">
+              <div class="faq-item">
+                <strong>Quanto tempo dura a mentoria?</strong>
+                <span>
+                  A duração e a frequência dos encontros variam conforme o
+                  formato (individual, casal, líderes, grupo). Essas informações
+                  são alinhadas após sua inscrição na lista de interesse.
+                </span>
+              </div>
+              <div class="faq-item">
+                <strong>É online ou presencial?</strong>
+                <span>
+                  A maior parte dos acompanhamentos acontece online, o que
+                  permite atender pessoas de diferentes regiões. Em alguns casos
+                  específicos, há possibilidades presenciais.
+                </span>
+              </div>
+            </div>
+
+            <div class="faq-list">
+              <div class="faq-item">
+                <strong>Como funciona o valor e a forma de pagamento?</strong>
+                <span>
+                  Por envolver diferentes formatos e profundidades, os valores
+                  são apresentados após análise do formulário e definição do
+                  melhor encaixe para o seu momento.
+                </span>
+              </div>
+              <div class="faq-item">
+                <strong>Preencher o formulário me obriga a participar?</strong>
+                <span>
+                  Não. Preencher o formulário é um passo de sinceridade. A
+                  partir dele, a equipe entende seu momento e te orienta sobre
+                  o melhor caminho, inclusive se for esperar um próximo ciclo.
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA FINAL -->
+          <div class="cta-final" style="margin-top:1.8rem;">
+            <div>
+              <h3 style="margin-bottom:0.4rem;">Se Deus já está te chamando para ajustar rota, não adie esse passo.</h3>
+              <p>
+                A mentoria não é um fim em si mesma, é um ambiente que Deus
+                pode usar para alinhar coração, direção e decisões. O formulário
+                é um primeiro ato de responsabilidade com o que você já sabe.
+              </p>
+            </div>
+            <div class="cta-final-actions">
+              <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                Quero entrar na lista de interesse
+              </a>
+              <a href="index.html#contato" class="btn btn-ghost">
+                Tenho dúvidas, quero falar com a equipe
+              </a>
+              <small>
+                Você não está comprando uma promessa. Está assumindo que não
+                pode continuar levando certas áreas da vida “empurrando com a barriga”.
+              </small>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrapper footer-inner">
         <div>
-          <div class="eyebrow">Mentorias & Discipulados</div>
-          <h1 class="page-title">Mentorias para alinhamento de vida, família, ministério e negócios.</h1>
-          <p class="page-subtitle">
-            Processos acompanhados por Sergio e Wanessa Tanigawa para quem sabe que não está
-            mais no mesmo lugar, mas ainda não enxerga com clareza o próximo passo. Profundidade,
-            escuta, confronto em amor e direção prática.
-          </p>
-          <div class="hero-tags">
-            <span class="tag-pill">Individual & Casal</span>
-            <span class="tag-pill">Pastores & Líderes</span>
-            <span class="tag-pill">Alta responsabilidade</span>
-          </div>
+          <strong>Instituto Tanigawa</strong><br />
+          <span>Cuidado com pessoas, líderes e organizações.</span>
         </div>
-
-        <aside class="hero-card">
-          <div class="hero-card-inner">
-            <h3>Para quem é a mentoria?</h3>
-            <p>
-              Para quem está em transição de ciclo, carrega responsabilidades grandes, sente
-              um chamado maior, sabe que precisa ajustar rota, mas não quer fazer isso sozinho.
-              Para quem está pronto para ser confrontado em amor, reposicionado em propósito
-              e fortalecido na caminhada.
-            </p>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- TIPOS DE MENTORIA -->
-    <section id="formatos">
-      <div class="shell">
-        <div class="section-heading">
-          <h2>Principais formatos de mentoria</h2>
-          <p>
-            A estrutura é ajustada conforme a realidade, mas a essência é a mesma:
-            ouvir, discernir, alinhar e caminhar junto de forma responsável e profunda.
-          </p>
+        <div class="footer-links">
+          <a href="#topo">Voltar ao topo</a>
+          <a href="#formatos">Mentorias</a>
+          <a href="index.html#nr1">Projeto NR-1</a>
+          <a href="index.html#devocionais">Devocionais</a>
         </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <div class="pill-row">
-              <span class="pill-soft">Individual & Casal</span>
-              <span class="pill-soft">Processos de 6 a 12 encontros</span>
-            </div>
-            <h3>Mentoria de Propósito & Vida Espiritual</h3>
-            <p>
-              Voltada para pessoas e casais que precisam de clareza sobre identidade,
-              chamado, decisões importantes, curas de áreas específicas e reorganização
-              da vida a partir do que Deus está falando.
-            </p>
-            <ul class="list">
-              <li>• Diagnóstico inicial espiritual e emocional.</li>
-              <li>• Encontros sequenciais com temas progressivos.</li>
-              <li>• Tarefas, leituras e exercícios entre encontros.</li>
-              <li>• Espaço seguro para perguntas e alinhamentos finos.</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <div class="pill-row">
-              <span class="pill-soft">Pastores, líderes & empresários</span>
-              <span class="pill-soft">Alta demanda & influência</span>
-            </div>
-            <h3>Mentoria de Governo & Liderança</h3>
-            <p>
-              Focada em quem governa: líderes de casa, ministério, empresa ou projetos.
-              O objetivo é fortalecer coração, visão, estrutura, limites saudáveis e
-              capacidade de decidir sem se perder no processo.
-            </p>
-            <ul class="list">
-              <li>• Conversas confidenciais e profundas.</li>
-              <li>• Leituras de cenário e decisões estratégicas.</li>
-              <li>• Cuidado com família e bastidores do líder.</li>
-              <li>• Integração entre espiritual, emocional e prático.</li>
-            </ul>
-          </div>
+        <div>
+          <span>CNPJ 00.000.000/0000-00 • © <span id="anoAtual">2025</span> Instituto Tanigawa</span>
         </div>
       </div>
-    </section>
-
-    <!-- DISCIPULADO & GRUPOS -->
-    <section id="discipulados">
-      <div class="shell">
-        <div class="section-heading">
-          <h2>Discipulados, grupos e trilhas de jornada</h2>
-          <p>
-            Alguns processos acontecem em grupo: ambientes menores, com pessoas que
-            estão em fases similares, para compartilhar, aprender e praticar juntos.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <div class="pill-row">
-              <span class="pill-soft">Grupos guiados</span>
-              <span class="pill-soft">Trilhas temáticas</span>
-            </div>
-            <h3>Discipulados temáticos</h3>
-            <p>
-              Trilhas em temas como vida com Deus, oração e intercessão, família,
-              finanças, mente e cura. Cada encontro aprofunda um aspecto e traz
-              tarefas práticas para o dia a dia.
-            </p>
-            <ul class="list">
-              <li>• Conteúdo bíblico + prática real.</li>
-              <li>• Espaço para perguntas e partilhas.</li>
-              <li>• Materiais exclusivos (devocionais, cadernos, exercícios).</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <div class="pill-row">
-              <span class="pill-soft">Grupos reduzidos</span>
-              <span class="pill-soft">Foco em confiança e profundidade</span>
-            </div>
-            <h3>Grupos fechados de mentoria</h3>
-            <p>
-              Formatos em que algumas pessoas caminham juntas por um período definido,
-              com encontros on-line, comunhão, apoio mútuo, confissões e avanços
-              compartilhados.
-            </p>
-            <ul class="list">
-              <li>• Turmas com vagas limitadas.</li>
-              <li>• Processos com início, meio e fim.</li>
-              <li>• Alinhamento de expectativas desde o início.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMO FUNCIONA -->
-    <section id="como-funciona">
-      <div class="shell">
-        <div class="section-heading">
-          <h2>Como funciona na prática?</h2>
-          <p>
-            A forma exata (individual, casal, grupo, duração, valores) é discernida
-            caso a caso. Mas o fluxo geral segue alguns passos simples:
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3>1. Pré-cadastro</h3>
-            <p>
-              Você preenche um formulário simples, contando um pouco da sua história,
-              contexto, expectativa e urgência. Isso nos ajuda a entender se e como
-              podemos te servir.
-            </p>
-            <h3 style="margin-top:14px;">2. Análise & retorno</h3>
-            <p>
-              A equipe lê com atenção, ora sobre o caso e retorna com:
-              possibilidades de formato, duração estimada, valores e datas.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>3. Alinhamento & início</h3>
-            <p>
-              Se fizer sentido para ambas as partes, confirmamos o formato e o início.
-              A partir daí, começamos uma jornada de cuidado, confrontos em amor,
-              direção e prática.
-            </p>
-            <h3 style="margin-top:14px;">4. Processos & próximos ciclos</h3>
-            <p>
-              Ao final, avaliamos juntos os frutos e, se fizer sentido, desenhamos
-              próximos passos: nova etapa de mentoria, discipulado, materiais ou
-              acompanhamento pontual.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq">
-      <div class="shell">
-        <div class="section-heading">
-          <h2>Perguntas frequentes</h2>
-          <p>
-            Algumas respostas iniciais para dúvidas que aparecem com frequência
-            antes do primeiro contato.
-          </p>
-        </div>
-
-        <div class="faq">
-          <div class="faq-item">
-            <div class="faq-question">As mentorias são on-line ou presenciais?</div>
-            <div class="faq-answer">
-              Na maior parte dos casos, os encontros são on-line (o que nos permite
-              atender pessoas no Brasil e fora). Em situações específicas, é possível
-              combinar encontros presenciais.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">Qual é o valor da mentoria?</div>
-            <div class="faq-answer">
-              O valor varia conforme o formato (individual, casal, grupo), duração,
-              frequência e demanda de cada caso. Tudo isso é alinhado após o
-              pré-cadastro e antes de qualquer compromisso.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">Posso indicar alguém para mentoria?</div>
-            <div class="faq-answer">
-              Sim. Você pode encaminhar o link desta página ou do formulário de
-              pré-cadastro. Em alguns casos, será importante que a própria pessoa
-              tenha consciência e desejo de participar.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA PRÉ-CADASTRO -->
-    <section id="pre-cadastro">
-      <div class="shell">
-        <div class="cta-panel">
-          <p>
-            Se você sente que é tempo de caminhar mais perto — seja em mentoria individual,
-            para casal, discipulado ou grupo — o primeiro passo é simples: preencher o
-            pré-cadastro. A partir dele, vamos orar, discernir e te responder com clareza
-            e responsabilidade.
-          </p>
-          <a class="btn btn-primary" href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" target="_blank" rel="noopener">
-            Fazer meu pré-cadastro agora
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="shell footer-inner">
-      <div>© <span id="year"></span> Instituto Tanigawa. Todos os direitos reservados.</div>
-      <div class="footer-links">
-        <a href="index.html#topo">Home</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="contato.html">Contato</a>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    var themeToggle = document.getElementById("themeToggle");
-    function setTheme(theme) {
-      document.body.setAttribute("data-theme", theme);
-      themeToggle.textContent = theme === "dark" ? "Modo Claro" : "Modo Escuro";
+    // Atualiza ano no rodapé com segurança
+    const spanAno = document.getElementById('anoAtual');
+    if (spanAno) {
+      spanAno.textContent = new Date().getFullYear();
     }
-    themeToggle.addEventListener("click", function () {
-      var current = document.body.getAttribute("data-theme") || "light";
-      setTheme(current === "light" ? "dark" : "light");
-    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentorias – Instituto Tanigawa</title>
+  <meta name="description" content="Mentorias do Instituto Tanigawa para pessoas, casais, líderes e empresários. Acompanhamento profundo, bíblico e prático para decisões reais.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-main: #020617;
+      --bg-alt: #030712;
+      --bg-section: #050a1b;
+      --accent: #3b82f6;
+      --accent-soft: #1d4ed8;
+      --accent-light: #93c5fd;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-soft: #1f2937;
+      --radius-lg: 18px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.65);
+      --max-width: 1120px;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 60%, #000 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.85), transparent);
+      border-bottom: 1px solid rgba(55, 65, 81, 0.65);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #bfdbfe, #3b82f6 35%, #020617 100%);
+      box-shadow: 0 0 24px rgba(59, 130, 246, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .brand-mark span {
+      display: inline-block;
+      transform: translateY(0.5px);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-text strong {
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand-text span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--text-muted);
+      padding-bottom: 2px;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid transparent;
+      padding: 0.45rem 0.9rem;
+      white-space: nowrap;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background-color 0.12s, border-color 0.12s, color 0.12s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+      color: #020617;
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.7);
+      border-color: rgba(191, 219, 254, 0.5);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(37, 99, 235, 0.9);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--text-muted);
+      border-color: rgba(75, 85, 99, 0.9);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      border-radius: 999px;
+      border: 1px solid rgba(75, 85, 99, 0.85);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.35rem 0.7rem;
+      font-size: 0.8rem;
+      color: var(--text-main);
+    }
+
+    main {
+      flex: 1;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 3.2rem 0 2.6rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.3rem;
+      align-items: center;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.85);
+    }
+
+    .hero-title {
+      font-size: 2.3rem;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(120deg, #93c5fd, #e0f2fe, #93c5fd);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 32rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-note strong {
+      color: var(--accent-light);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #1d4ed8 0, #020617 40%, #020617 100%);
+      border-radius: 26px;
+      padding: 1.4rem 1.3rem 1.5rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-badge-corner {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      font-size: 0.7rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      color: var(--accent-light);
+    }
+
+    .hero-badge {
+      font-size: 0.78rem;
+      color: var(--accent-light);
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .hero-card-title {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-card-text {
+      font-size: 0.85rem;
+      color: #e5e7eb;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-pill-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.45rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-pill {
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: 999px;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.75rem;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* SEÇÕES GENÉRICAS */
+    section {
+      padding: 2.2rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+    }
+
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      padding: 1rem;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.8);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      color: var(--accent-light);
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .card-footer-link {
+      font-size: 0.8rem;
+      color: var(--accent-light);
+    }
+
+    .card-footer-link span {
+      opacity: 0.85;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.8rem;
+    }
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .stack strong {
+      color: var(--text-main);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.4rem;
+    }
+
+    .chip {
+      border-radius: 999px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      padding: 0.25rem 0.6rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* BLOCO PASSO A PASSO */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .step-card {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .step-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #020617;
+      font-weight: 700;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      color: var(--text-main);
+    }
+
+    /* CTA FINAL */
+    .cta-final {
+      background: linear-gradient(135deg, #1d4ed8, #0b1120);
+      border-radius: 22px;
+      padding: 1.4rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(191, 219, 254, 0.6);
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+      gap: 1.4rem;
+      align-items: center;
+      margin-top: 1.8rem;
+    }
+
+    .cta-final p {
+      font-size: 0.9rem;
+    }
+
+    .cta-final small {
+      font-size: 0.75rem;
+      opacity: 0.9;
+    }
+
+    .cta-final-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .cta-final-actions .btn-primary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(55, 65, 81, 0.7);
+      background: rgba(3, 7, 18, 0.98);
+      margin-top: 2.2rem;
+    }
+
+    .footer-inner {
+      padding: 1.2rem 0 1.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-light);
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 960px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+      .hero-grid,
+      .two-col,
+      .card-grid-3,
+      .steps-grid,
+      .cta-final {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero {
+        padding-top: 2.3rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+      .section-title {
+        font-size: 1.28rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page" id="topo">
+    <header>
+      <div class="wrapper">
+        <nav class="nav">
+          <div class="nav-left">
+            <div class="brand-mark" aria-label="Instituto Tanigawa">
+              <span>IT</span>
+            </div>
+            <div class="brand-text">
+              <strong>Instituto Tanigawa</strong>
+              <span>Vida • Espírito • Propósito</span>
+            </div>
+          </div>
+          <div class="nav-links">
+            <a href="index.html#inicio">Início</a>
+            <a href="#formatos">Mentorias</a>
+            <a href="index.html#nr1">Projeto NR-1</a>
+            <a href="index.html#devocionais">Devocionais</a>
+            <a href="index.html#sobre">Sobre</a>
+            <a href="index.html#contato">Contato</a>
+          </div>
+          <div class="nav-cta">
+            <button class="mobile-menu-btn" type="button">Menu</button>
+            <a href="#formatos" class="btn btn-ghost">Ver formatos</a>
+            <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              Quero ser mentorado
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="inicio">
+        <div class="wrapper hero-grid">
+          <div>
+            <div class="pill">
+              <span class="pill-dot"></span>
+              <span>Mentorias Instituto Tanigawa</span>
+            </div>
+            <h1 class="hero-title">
+              Mentoria para quem precisa
+              <span class="highlight">de direção, não só de conteúdo</span>
+            </h1>
+            <p class="hero-subtitle">
+              Se Deus já tem te inquietado, mas você ainda não organizou essa
+              nova fase, a mentoria do Instituto Tanigawa é um espaço seguro
+              para alinhar vida, espírito e decisões com clareza.
+            </p>
+
+            <div class="hero-cta-row">
+              <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                Quero entrar na lista de interesse
+              </a>
+              <a href="#formatos" class="btn btn-ghost">
+                Ver formatos de mentoria
+              </a>
+            </div>
+            <p class="hero-note">
+              Conduzido por <strong>Sergio Tanigawa</strong> – pastor, mentor e conselheiro
+              espiritual de líderes, conferencistas e empresários.
+            </p>
+          </div>
+
+          <aside class="hero-card" aria-label="Resumo dos públicos atendidos">
+            <div class="hero-badge-corner">Vagas limitadas por ciclo</div>
+            <div class="hero-badge">Para quem é essa mentoria?</div>
+            <h2 class="hero-card-title">Perfis que mais se beneficiam</h2>
+            <p class="hero-card-text">
+              Pessoas em transição, casais em fase decisiva, líderes de igreja
+              e empresários que não podem mais errar em decisões estratégicas.
+            </p>
+            <div class="hero-pill-grid">
+              <div class="hero-pill">Pessoas em recomeço</div>
+              <div class="hero-pill">Casais & família</div>
+              <div class="hero-pill">Pastores & líderes</div>
+              <div class="hero-pill">Empresários & decisores</div>
+            </div>
+            <p class="hero-card-text">
+              Não é para quem só quer “achar interessante”. É para quem está
+              disposto a rever agenda, prioridades e decisões em obediência.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- FORMATOS -->
+      <section id="formatos">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Formatos disponíveis</div>
+            <h2 class="section-title">Qual mentoria faz mais sentido para você agora?</h2>
+            <p class="section-subtitle">
+              Todas as modalidades carregam a mesma essência, mas com intensidade
+              e foco diferentes. O ponto não é “qual é mais bonita”, e sim qual
+              responde melhor ao que você está vivendo.
+            </p>
+          </div>
+
+          <div class="card-grid-3">
+            <article class="card">
+              <div class="card-tag">Individual</div>
+              <h3>Mentoria de Vida & Espírito</h3>
+              <p>
+                Acompanhamento 1:1 para quem precisa organizar o caos interno,
+                fechar ciclos, perdoar, reposicionar o coração e ouvir Deus com
+                clareza para o próximo passo.
+              </p>
+              <p class="card-footer-link">
+                <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" target="_blank" rel="noopener noreferrer">
+                  <span>Quero informar meu interesse →</span>
+                </a>
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-tag">Casais</div>
+              <h3>Mentoria de Casais & Família</h3>
+              <p>
+                Para casais que sabem que a próxima fase da família exige acordo,
+                cura de histórias antigas, alinhamento espiritual e decisões
+                firmes em unidade.
+              </p>
+              <p class="card-footer-link">
+                <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" target="_blank" rel="noopener noreferrer">
+                  <span>Quero entrar na lista de casais →</span>
+                </a>
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-tag">Alta demanda</div>
+              <h3>Mentoria para Líderes & Empresários</h3>
+              <p>
+                Para quem governa pessoas, recursos e decisões pesadas. Espaço
+                de alinhamento espiritual, emocional e estratégico para não
+                confundir ativismo com direção de Deus.
+              </p>
+              <p class="card-footer-link">
+                <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" target="_blank" rel="noopener noreferrer">
+                  <span>Quero ser considerado nessa turma →</span>
+                </a>
+              </p>
+            </article>
+          </div>
+
+          <div class="card-grid-3" style="margin-top:1.1rem;">
+            <article class="card">
+              <div class="card-tag">Grupos</div>
+              <h3>Mentoria em grupo (turmas fechadas)</h3>
+              <p>
+                Jornadas em grupo para trabalhar temas específicos com uma
+                comunidade que vive lutas parecidas, sempre com acompanhamento
+                próximo e direção clara.
+              </p>
+              <p class="card-footer-link">
+                <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" target="_blank" rel="noopener noreferrer">
+                  <span>Quero ser avisado das próximas turmas →</span>
+                </a>
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-tag">Espiritual</div>
+              <h3>Oração, Intercessão & Guerra Espiritual</h3>
+              <p>
+                Para quem sente que foi chamado para o campo da intercessão e
+                precisa de direção, alinhamento e segurança no exercício desse
+                chamado.
+              </p>
+              <p class="card-footer-link">
+                <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" target="_blank" rel="noopener noreferrer">
+                  <span>Tenho interesse nessa área →</span>
+                </a>
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-tag">Sob medida</div>
+              <h3>Mentoria customizada</h3>
+              <p>
+                Para igrejas, equipes de liderança ou empresas que desejam um
+                desenho específico de encontros, temas e objetivos, alinhados
+                com a realidade local.
+              </p>
+              <p class="card-footer-link">
+                <a href="index.html#contato">
+                  <span>Quero conversar sobre isso →</span>
+                </a>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMO FUNCIONA -->
+      <section id="como-funciona">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Passo a passo</div>
+            <h2 class="section-title">Como funciona, na prática</h2>
+            <p class="section-subtitle">
+              A mentoria é simples na estrutura e profunda no conteúdo. Não é
+              um curso gravado, é acompanhamento com direção, confronto em amor
+              e aplicação prática.
+            </p>
+          </div>
+
+          <div class="steps-grid">
+            <article class="step-card">
+              <div class="step-number">1</div>
+              <strong>Você entra na lista de interesse</strong>
+              <p>
+                Preenche o formulário, conta um pouco do momento que está
+                vivendo e indica o formato de mentoria que faz mais sentido
+                nessa fase.
+              </p>
+            </article>
+
+            <article class="step-card">
+              <div class="step-number">2</div>
+              <strong>Equipe analisa e entra em contato</strong>
+              <p>
+                A equipe lê seu formulário, avalia encaixe com as turmas e
+                formatos disponíveis, e faz o primeiro contato para alinhar
+                expectativas.
+              </p>
+            </article>
+
+            <article class="step-card">
+              <div class="step-number">3</div>
+              <strong>Início da jornada</strong>
+              <p>
+                Você recebe as datas, orientações e materiais de apoio. A partir
+                daí, cada encontro é uma combinação de palavra, direção e
+                aplicação prática.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq">
+        <div class="wrapper">
+          <div class="section-header">
+            <div class="section-kicker">Perguntas frequentes</div>
+            <h2 class="section-title">Algumas dúvidas que surgem antes de começar</h2>
+            <p class="section-subtitle">
+              Se você está em dúvida se deve ou não entrar, provavelmente já
+              está na hora de organizar esse processo com mais seriedade.
+            </p>
+          </div>
+
+          <div class="two-col">
+            <div class="faq-list">
+              <div class="faq-item">
+                <strong>Quanto tempo dura a mentoria?</strong>
+                <span>
+                  A duração e a frequência dos encontros variam conforme o
+                  formato (individual, casal, líderes, grupo). Essas informações
+                  são alinhadas após sua inscrição na lista de interesse.
+                </span>
+              </div>
+              <div class="faq-item">
+                <strong>É online ou presencial?</strong>
+                <span>
+                  A maior parte dos acompanhamentos acontece online, o que
+                  permite atender pessoas de diferentes regiões. Em alguns casos
+                  específicos, há possibilidades presenciais.
+                </span>
+              </div>
+            </div>
+
+            <div class="faq-list">
+              <div class="faq-item">
+                <strong>Como funciona o valor e a forma de pagamento?</strong>
+                <span>
+                  Por envolver diferentes formatos e profundidades, os valores
+                  são apresentados após análise do formulário e definição do
+                  melhor encaixe para o seu momento.
+                </span>
+              </div>
+              <div class="faq-item">
+                <strong>Preencher o formulário me obriga a participar?</strong>
+                <span>
+                  Não. Preencher o formulário é um passo de sinceridade. A
+                  partir dele, a equipe entende seu momento e te orienta sobre
+                  o melhor caminho, inclusive se for esperar um próximo ciclo.
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA FINAL -->
+          <div class="cta-final" style="margin-top:1.8rem;">
+            <div>
+              <h3 style="margin-bottom:0.4rem;">Se Deus já está te chamando para ajustar rota, não adie esse passo.</h3>
+              <p>
+                A mentoria não é um fim em si mesma, é um ambiente que Deus
+                pode usar para alinhar coração, direção e decisões. O formulário
+                é um primeiro ato de responsabilidade com o que você já sabe.
+              </p>
+            </div>
+            <div class="cta-final-actions">
+              <a href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                Quero entrar na lista de interesse
+              </a>
+              <a href="index.html#contato" class="btn btn-ghost">
+                Tenho dúvidas, quero falar com a equipe
+              </a>
+              <small>
+                Você não está comprando uma promessa. Está assumindo que não
+                pode continuar levando certas áreas da vida “empurrando com a barriga”.
+              </small>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrapper footer-inner">
+        <div>
+          <strong>Instituto Tanigawa</strong><br />
+          <span>Cuidado com pessoas, líderes e organizações.</span>
+        </div>
+        <div class="footer-links">
+          <a href="#topo">Voltar ao topo</a>
+          <a href="#formatos">Mentorias</a>
+          <a href="index.html#nr1">Projeto NR-1</a>
+          <a href="index.html#devocionais">Devocionais</a>
+        </div>
+        <div>
+          <span>CNPJ 00.000.000/0000-00 • © <span id="anoAtual">2025</span> Instituto Tanigawa</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Atualiza ano no rodapé com segurança
+    const spanAno = document.getElementById('anoAtual');
+    if (spanAno) {
+      spanAno.textContent = new Date().getFullYear();
+    }
   </script>
 </body>
 </html>
