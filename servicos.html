@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Serviços & Linhas de Atuação | Instituto Tanigawa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conheça as linhas de atuação do Instituto Tanigawa: mentorias, discipulados, aconselhamento, palestras, treinamentos in-company e Projeto NR-1 para empresas e organizações." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Sora:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Mesmo sistema visual da Home */
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --bg-soft: #e3edf5;
+      --text: #102033;
+      --text-soft: #4d6179;
+      --accent: #0f6299;
+      --accent-soft: #1ba5b8;
+      --accent-soft-2: #88c8b8;
+      --border-soft: #d4dde8;
+      --shadow-soft: 0 18px 40px rgba(4, 25, 53, 0.12);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-pill: 999px;
+      --transition-fast: 0.18s ease-out;
+      --transition-med: 0.25s ease;
+    }
+    [data-theme="dark"] {
+      --bg: #050713;
+      --bg-alt: #0c1321;
+      --bg-soft: #121b2c;
+      --text: #f7fbff;
+      --text-soft: #c2cde0;
+      --accent: #47b5ff;
+      --accent-soft: #37d4c6;
+      --accent-soft-2: #96f2c6;
+      --border-soft: #28344a;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.7);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Sora", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, rgba(28, 81, 142, 0.12), transparent 55%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .shell { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(245, 247, 250, 0.95), rgba(245, 247, 250, 0.7));
+      border-bottom: 1px solid rgba(212, 221, 232, 0.6);
+    }
+    [data-theme="dark"] header {
+      background: linear-gradient(to bottom, rgba(5, 7, 19, 0.97), rgba(5, 7, 19, 0.8));
+      border-bottom-color: rgba(40, 52, 74, 0.7);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark {
+      width: 40px; height: 40px; border-radius: 14px;
+      background: radial-gradient(circle at 20% 15%, #ffffff 0, #cfe7ff 30%, #0f6299 100%);
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 10px 25px rgba(12, 70, 128, 0.4);
+      font-weight:700; font-size:18px; color:#0a2540;
+    }
+    .brand-text { display:flex; flex-direction:column; gap:2px; }
+    .brand-text span:first-child {
+      font-family:"Playfair Display",serif;
+      font-size:18px; letter-spacing:0.06em; text-transform:uppercase;
+    }
+    .brand-text span:last-child {
+      font-size:11px; text-transform:uppercase;
+      letter-spacing:0.18em; color:var(--text-soft);
+    }
+    nav { display:flex; align-items:center; gap:10px; }
+    .nav-links {
+      display:flex; align-items:center; gap:14px;
+      font-size:13px; text-transform:uppercase; letter-spacing:0.16em;
+    }
+    .nav-links a {
+      padding:6px 8px; border-radius:999px;
+      color:var(--text-soft);
+      transition:background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+    }
+    .nav-links a:hover {
+      background:rgba(15,98,153,0.08);
+      color:var(--accent);
+      transform:translateY(-1px);
+    }
+    .nav-cta { display:flex; align-items:center; gap:8px; }
+    .btn {
+      border:none; outline:none;
+      border-radius:var(--radius-pill); padding:9px 18px;
+      font-size:13px; font-weight:500;
+      letter-spacing:0.08em; text-transform:uppercase;
+      cursor:pointer; display:inline-flex; align-items:center; gap:8px;
+      transition:background var(--transition-med), color var(--transition-med), box-shadow var(--transition-med), transform var(--transition-fast);
+      white-space:nowrap;
+    }
+    .btn-primary {
+      background:linear-gradient(135deg,var(--accent),var(--accent-soft));
+      color:#fff; box-shadow:0 12px 30px rgba(15,98,153,0.4);
+    }
+    .btn-primary:hover { transform:translateY(-1px); box-shadow:0 18px 40px rgba(15,98,153,0.6); }
+    .btn-ghost {
+      background:transparent; color:var(--text-soft);
+      border:1px solid var(--border-soft);
+    }
+    .btn-ghost:hover { background:rgba(255,255,255,0.08); color:var(--accent); }
+    .theme-toggle {
+      border-radius:999px; padding:6px 12px;
+      font-size:12px;
+      background:rgba(12,19,37,0.04);
+      color:var(--text-soft);
+    }
+
+    main { padding-bottom:80px; }
+    section { padding:60px 0; }
+
+    .eyebrow {
+      font-size:12px; text-transform:uppercase;
+      letter-spacing:0.2em; color:var(--accent-soft);
+      margin-bottom:10px;
+    }
+    .page-title {
+      font-family:"Playfair Display",serif;
+      font-size:clamp(30px,4vw,38px);
+      line-height:1.15; margin-bottom:14px;
+    }
+    .page-subtitle {
+      font-size:15px; color:var(--text-soft); max-width:560px;
+    }
+    .section-heading {
+      display:flex; flex-direction:column; gap:6px;
+      margin-bottom:26px;
+    }
+    .section-heading h2 {
+      font-family:"Playfair Display",serif;
+      font-size:24px;
+    }
+    .section-heading p {
+      font-size:14px; color:var(--text-soft); max-width:600px;
+    }
+    .service-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+    }
+    .card {
+      background:var(--bg-alt);
+      border-radius:var(--radius-md);
+      border:1px solid var(--border-soft);
+      box-shadow:0 10px 26px rgba(8,21,40,0.08);
+      padding:18px 18px 16px;
+      position:relative; overflow:hidden;
+    }
+    .card h3 { font-size:18px; margin-bottom:6px; }
+    .card p { font-size:14px; color:var(--text-soft); }
+    .pill-row { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; font-size:11px; }
+    .pill-soft {
+      padding:4px 10px; border-radius:999px;
+      background:rgba(15,98,153,0.08);
+      color:var(--accent);
+    }
+    .emoji {
+      font-size:20px; margin-bottom:6px;
+    }
+    .list { font-size:13px; color:var(--text-soft); margin-top:8px; }
+    .list li + li { margin-top:4px; }
+
+    .cta-panel {
+      margin-top:40px;
+      border-radius:24px;
+      padding:22px 20px;
+      background:linear-gradient(135deg,rgba(15,98,153,0.06),rgba(55,212,198,0.04));
+      border:1px dashed rgba(27,165,184,0.6);
+      display:flex; flex-wrap:wrap; gap:14px;
+      align-items:center; justify-content:space-between;
+    }
+    .cta-panel p { font-size:14px; color:var(--text-soft); max-width:620px; }
+
+    footer {
+      border-top:1px solid var(--border-soft);
+      padding:18px 0 28px;
+      font-size:12px; color:var(--text-soft);
+    }
+    .footer-inner {
+      display:flex; flex-wrap:wrap; justify-content:space-between;
+      gap:10px; align-items:center;
+    }
+    .footer-links { display:flex; gap:10px; }
+    .footer-links a { text-decoration:underline; text-decoration-style:dotted; }
+
+    @media (max-width:800px) {
+      .header-inner { flex-wrap:wrap; align-items:flex-start; }
+      nav { width:100%; justify-content:flex-end; flex-wrap:wrap; }
+      .nav-links { display:none; }
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <header>
+    <div class="shell header-inner">
+      <div class="brand">
+        <div class="brand-mark">IT</div>
+        <div class="brand-text">
+          <span>Instituto Tanigawa</span>
+          <span>Vida • Família • Negócios</span>
+        </div>
+      </div>
+      <nav>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="sobre.html">Sobre</a>
+          <a href="index.html#mentorias">Mentorias</a>
+          <a href="index.html#discipulado">Discipulado</a>
+          <a href="servicos.html">Serviços</a>
+          <a href="index.html#nr1">Projeto NR-1</a>
+          <a href="contato.html">Contato</a>
+        </div>
+        <div class="nav-cta">
+          <button class="btn btn-ghost theme-toggle" id="themeToggle">Modo Escuro</button>
+          <a href="contato.html" class="btn btn-primary">Agendar conversa</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SERVIÇOS -->
+    <section>
+      <div class="shell">
+        <div class="eyebrow">Serviços & Linhas de atuação</div>
+        <h1 class="page-title">Formas de servir pessoas, famílias, igrejas e empresas.</h1>
+        <p class="page-subtitle">
+          O Instituto Tanigawa atua em diferentes frentes, sempre com o mesmo coração:
+          cuidar de pessoas, alinhar identidade e propósito, fortalecer famílias e
+          apoiar líderes e organizações com responsabilidade espiritual, emocional e técnica.
+        </p>
+      </div>
+    </section>
+
+    <!-- GRID DE SERVIÇOS -->
+    <section>
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Linhas principais de atuação</h2>
+          <p>
+            A seguir, você encontra um panorama das principais formas como o Instituto
+            Tanigawa serve indivíduos, famílias, ministérios e empresas. Em cada caso,
+            o formato e a profundidade são ajustados à realidade de quem nos procura.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="card">
+            <div class="emoji">🧭</div>
+            <div class="pill-row">
+              <span class="pill-soft">Individual & Casal</span>
+              <span class="pill-soft">On-line & presencial</span>
+            </div>
+            <h3>Mentorias de Propósito & Vida Espiritual</h3>
+            <p>
+              Processos de mentoria conduzidos por Sergio e/ou Wanessa, voltados a
+              alinhamento de identidade, cura de raízes, decisões importantes, transições
+              de ciclo, reposicionamento de chamado e organização da vida a partir do que
+              Deus tem falado.
+            </p>
+            <ul class="list">
+              <li>• Aulas, conversas profundas e tarefas entre encontros.</li>
+              <li>• Leituras, devocionais e exercícios práticos.</li>
+              <li>• Espaço seguro para perguntas e discernimentos.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="emoji">👨‍👩‍👧‍👦</div>
+            <div class="pill-row">
+              <span class="pill-soft">Família & Casamento</span>
+              <span class="pill-soft">Aconselhamento & discipulado</span>
+            </div>
+            <h3>Discipulado & Aconselhamento Familiar</h3>
+            <p>
+              Acompanhamento para casais e famílias que precisam restaurar comunicação,
+              reorganizar prioridades, tratar feridas, alinhar a casa com o chamado e
+              construir um ambiente emocionalmente saudável.
+            </p>
+            <ul class="list">
+              <li>• Conversas guiadas com base bíblica e visão clínica.</li>
+              <li>• Ferramentas para diálogo, perdão e acordos práticos.</li>
+              <li>• Suporte em fases críticas: crises, mudanças e recomeços.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="emoji">🕊️</div>
+            <div class="pill-row">
+              <span class="pill-soft">Pastores & Líderes</span>
+              <span class="pill-soft">Alta responsabilidade</span>
+            </div>
+            <h3>Mentoria para Pastores, Líderes & Empresários</h3>
+            <p>
+              Cuidado e alinhamento para quem governa pessoas, igrejas, empresas ou
+              projetos. Foco em proteção de coração, saúde emocional, sabedoria nas
+              decisões, estruturação de equipes e equilíbrio entre casa, ministério
+              e negócios.
+            </p>
+            <ul class="list">
+              <li>• Espaço confidencial para abrir dores e pressões.</li>
+              <li>• Estratégias espirituais e práticas para liderança.</li>
+              <li>• Desenvolvimento de visão e cultura saudável.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="emoji">🏢</div>
+            <div class="pill-row">
+              <span class="pill-soft">Empresas & Organizações</span>
+              <span class="pill-soft">Compliance & cuidado</span>
+            </div>
+            <h3>Projeto NR-1 & Saúde Psicossocial</h3>
+            <p>
+              Implementação de diagnósticos psicossociais, fluxos NR-1, PGR e GRO, com
+              uso de tecnologia, tokens e relatórios para apoiar empresas na conformidade
+              legal e, principalmente, no cuidado real com colaboradores.
+            </p>
+            <ul class="list">
+              <li>• Questionários, tokens e trilhas digitais.</li>
+              <li>• Leitura dos dados com olhar humano e espiritual.</li>
+              <li>• Devolutivas para direção, RH e lideranças.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="emoji">🎤</div>
+            <div class="pill-row">
+              <span class="pill-soft">Conferências & eventos</span>
+              <span class="pill-soft">Igrejas & empresas</span>
+            </div>
+            <h3>Palestras, Conferências & Ministrações</h3>
+            <p>
+              Ministrações proféticas, sessões de ensino, pregações e palestras voltadas
+              a temas como identidade, governo, cura, família, saúde emocional e cultura
+              organizacional.
+            </p>
+            <ul class="list">
+              <li>• Eventos em igrejas, conferências e retiros.</li>
+              <li>• Palestras para times de liderança e equipes.</li>
+              <li>• Conteúdos adaptados ao contexto de cada casa ou empresa.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="emoji">📚</div>
+            <div class="pill-row">
+              <span class="pill-soft">Formações & conteúdos</span>
+              <span class="pill-soft">On-line & materiais</span>
+            </div>
+            <h3>Formações, materiais & recursos do Instituto</h3>
+            <p>
+              Livros, cadernos, metodologias (Synesis, Sozo) e conteúdos complementares
+              que acompanham jornadas de mentoria, discipulado, projetos de oração,
+              transformação de mentalidade e alinhamento de propósito.
+            </p>
+            <ul class="list">
+              <li>• Materiais exclusivos para mentorandos e grupos.</li>
+              <li>• Recursos para igrejas e equipes de intercessão.</li>
+              <li>• Estruturas que continuam o processo fora das sessões.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="cta-panel">
+          <p>
+            Se alguma dessas linhas de atuação tocou sua realidade — seja como pessoa,
+            família, igreja ou empresa — o próximo passo é uma conversa. Conte sua
+            história, sua necessidade e seu contexto, e vamos discernir juntos como
+            podemos servir.
+          </p>
+          <a href="contato.html" class="btn btn-primary">Falar sobre minha necessidade</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <div>© <span id="year"></span> Instituto Tanigawa. Todos os direitos reservados.</div>
+      <div class="footer-links">
+        <a href="index.html#topo">Home</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    var themeToggle = document.getElementById("themeToggle");
+    function setTheme(theme) {
+      document.body.setAttribute("data-theme", theme);
+      themeToggle.textContent = theme === "dark" ? "Modo Claro" : "Modo Escuro";
+    }
+    themeToggle.addEventListener("click", function () {
+      var current = document.body.getAttribute("data-theme") || "light";
+      setTheme(current === "light" ? "dark" : "light");
+    });
+  </script>
+</body>
+</html>
